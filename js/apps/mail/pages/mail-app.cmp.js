@@ -51,5 +51,8 @@ export default {
             .then(mails => this.mails = mails)
         console.log("created -> this.mails", this.mails)
     },
+    mounted() {
+        console.log("created -> this.mails", this.mails)
+    },
 
 }
