@@ -10,6 +10,7 @@ export default {
             <router-link to="/notes" >Notes App</router-link>
             <router-link to="/mail" >Mail App</router-link>
 
+
             <router-view></router-view>
             <p>Enjoy!</p>
         </div>
