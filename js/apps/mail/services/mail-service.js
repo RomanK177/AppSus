@@ -45,22 +45,24 @@ function getEmptyMail() {
 }
 
 function _createMails() {
-    if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage
+    if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage(STORAGE_KEY)
     const mails = []
-    mails.push(_createMail('I know what you did!', 'I saw the body and the blood marks. You have one day to bring me the money. Asshole...'));
-    mails.push(_createMail('Order is ready', 'Come and get your shit.'));
-    mails.push(_createMail('KAPARA', 'Bo be imsha, al tihie eled.'));
-    mails.push(_createMail('SPAM SPAM ', 'Lorem stuffff comercial bla bla'));
+    mails.push(_createMail('I know what you did!', 'I saw the body and the blood marks. You have one day to bring me the money. Asshole...', 'Roman'));
+    mails.push(_createMail('Order is ready', 'Come and get your shit.', 'PizaHus'));
+    mails.push(_createMail('KAPARA', 'Bo be imsha, al tihie eled.', 'Danielle'));
+    mails.push(_createMail('SPAM SPAM ', 'Lorem stuffff comercial bla bla', 'Johny'));
+    utilService.storeToStorage(STORAGE_KEY, mails)
     return mails;
 }
 
-function _createMail(subject, body, ) {
+function _createMail(subject, body, from) {
     const mail = {
         id: utilService.makeId(),
         subject,
         body,
+        from,
         isRead: Math.random() > 0.5,
-        sentAt: new Date()
+        sentAt: Date.now()
     }
     return mail;
 }
