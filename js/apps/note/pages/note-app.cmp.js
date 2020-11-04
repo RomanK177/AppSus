@@ -1,6 +1,6 @@
-import { notesService } from "../services/notes-service.js";
-import noteImg from '../apps/Notes/cmps/note-img.cmp.js'
-import appHeader from '../cmps/app-header.cmp.js'
+import { notesService } from "../services/note-service.js";
+import noteImg from '../cmps/note-img.cmp.js'
+import appHeader from '../../../cmps/app-header.cmp.js'
 
 export default {
     template: ` 
