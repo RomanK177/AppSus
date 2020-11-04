@@ -2,11 +2,19 @@
     box-sizing: border-box;
 }
 
-.mail-list {
-    background-color: aqua;
+.mail-preview {
+    display: flex;
+    justify-content: space-between;
 }
 
-.mail-list ul {
+.mail-list ul li {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: rows nowrap;
+    justify-content: space-between;
+    border: lightgray 1px solid;
+}
+
+.mail-preview {
+    display: flex;
+    justify-content: space-between;
 }
