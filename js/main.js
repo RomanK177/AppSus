@@ -6,7 +6,7 @@ const options = {
         <section>
             <!-- <app-header /> -->
             <main>
-              
+        
                     <router-view></router-view>
                
             </main>
