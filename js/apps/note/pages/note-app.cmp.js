@@ -2,6 +2,8 @@ import { noteService } from "../services/note-service.js";
 // import noteImg from '../cmps/note-img.cmp.js'
 import appHeader from '../../../cmps/app-header.cmp.js'
 import noteList from '../cmps/note-list.cmp.js'
+// import noteFilter from '../cmps/car/car-filter.cmp.js';
+import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
     template: ` 
@@ -31,13 +33,28 @@ export default {
     methods: {
         setNoteType() {
             console.log('the current type of note is...')
+        }, 
+        addNote() {
+            noteService.add(this.noteToEdit);
+            this.noteToEdit = noteService.getEmptyNote();
+        },
+        removeNote(noteId) {
+            noteService.remove(noteId)
+                .then(() => eventBus.$emit('show-msg', 'Note Deleted'))
+                .catch(err => console.log('something went wrong', err))
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
         }
+
     },
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes;
             const txt = this.filterBy.noteTitle.toLowerCase();
-            return this.notes.filter(note => note.noteTitle.toLowerCase().includes(txt))
+            let filteredNotes = this.notes.filter(note => note.noteTitle.toLowerCase().includes(txt))
+            console.log('notestoshow',filteredNotes)
+            return filteredNotes
         }
     },
 
@@ -46,7 +63,8 @@ export default {
         noteList
         // noteImg
 
-    }
+    },
+
 
 
 }

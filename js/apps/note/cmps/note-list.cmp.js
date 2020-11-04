@@ -7,7 +7,7 @@ export default {
         <section class="note-list">
             <h2>Your Notes</h2>
             <ul >
-                <li v-for="currNotes in notes" :key="currNotes.id" >
+                <li v-for="currNote in notes" :key="currNote.id" >
                    <note-preview :note="currNote" @click.native="noteClicked()" />
                    <button @click="emitRemove(currNote.id)">x</button>
                 </li>
@@ -17,7 +17,7 @@ export default {
     methods: {
         emitRemove(noteId) {
             // console.log('OK', noteId);
-            this.$emit('remove', note.Id)
+            this.$emit('remove', noteId)
         },
         noteClicked() {
             // this.$router.push('/')

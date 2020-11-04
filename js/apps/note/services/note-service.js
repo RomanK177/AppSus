@@ -53,7 +53,7 @@ function _createNotes() {
     notes.push(_createNote('NoteText', 'My Note', {txt: 'Fullstack Me Baby!'}, {backgroundColor: 'white', color: 'blue'}))
     notes.push(_createNote('NoteImg', 'Dog Image', {url: "http://some-img/me", title: "Me playing Mi"}, {backgroundColor: 'inherit'}));
     notes.push(_createNote('NoteTodos', 'My todos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null },{ txt: "Do this", doneAt: 187111111 }]}, {backgroundColor: 'inherit'}));
-    notes.push(_createNote('NoteVideo', 'funny video', {url: "http://youtube.com/video", title: "Youtube Video"}, {backgroundColor: 'inherit'}));
+    notes.push(_createNote('NoteVideo', 'Funny video', {url: "http://youtube.com/video", title: "Youtube Video"}, {backgroundColor: 'inherit'}));
     return notes;
 }
 
@@ -64,7 +64,7 @@ function _createNote(type, noteTitle, info, style) {
         noteTitle,
         info,
         style,
-        isPinned: false,
+        isPinned: Math.random() > 0.5,
         createdAt: new Date(),
     }
     return note;
