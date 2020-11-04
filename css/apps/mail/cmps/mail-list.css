@@ -5,3 +5,8 @@
 .mail-list {
     background-color: aqua;
 }
+
+.mail-list ul {
+    display: flex;
+    flex-flow: row nowrap;
+}
