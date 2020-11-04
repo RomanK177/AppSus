@@ -6,7 +6,7 @@ export default {
     <section class="homepage">
         <div class="homepage-txt">
             <h1>Welcome to the Home Page!</h1>
-            <p>Your favorite new book app! Where you can find books in our library, read about them, rate them, and buy them!</p>
+            <p>Your'e favorite new app- that holds a mail app, a notes app, and even a book store!</p>
             <router-link to="/notes" >Notes App</router-link>
             <router-link to="/mail" >Mail App</router-link>
 
