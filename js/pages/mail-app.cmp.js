@@ -3,9 +3,10 @@ import appHeader from '../cmps/app-header.cmp.js'
 
 export default {
     template: ` 
-    <appHeader></appHeader>
+     <section class="mail-app">
+     <appHeader></appHeader>
       <p> Mail App</p>
-    
+      </section>
     
     
     

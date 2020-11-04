@@ -1,7 +1,7 @@
 export default {
     template: `
     <header class="app-header">
-        <user-msg/>
+        <!-- <user-msg/> -->
         <h1>AppSus</h1>
         <nav>
             <router-link to="/" exact>Home</router-link>|
