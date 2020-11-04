@@ -1,6 +1,6 @@
-import homePage from "./pages/home-page.cmp.js";
-import notesApp from './pages/notes-app.cmp.js'
-import mailApp from './pages/mail-app.cmp.js'
+import homePage from './pages/home-page.cmp.js'
+import noteApp from './apps/note/pages/note-app.cmp.js'
+import mailApp from './apps/mail/pages/mail-app.cmp.js'
 
 const myRoutes = [{
         path: "/",
@@ -8,7 +8,7 @@ const myRoutes = [{
     },
     {
         path: '/notes',
-        component: notesApp
+        component: noteApp
     },
     {
         path: '/mail',
