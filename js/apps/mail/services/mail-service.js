@@ -1,4 +1,9 @@
-const gMails = []
+import { utilService } from "../../../services/util-service.js";
+
+const STORAGE_KEY = "mailsDB";
+
+
+const gMails = _createMails()
 
 export const mailService = {
     getById,
@@ -37,4 +42,25 @@ function saveMail(mail) {
 
 function getEmptyMail() {
     return { id: '', subject: '', body: '', isRead: false, sentAt: null }
+}
+
+function _createMails() {
+    if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage
+    const mails = []
+    mails.push(_createMail('I know what you did!', 'I saw the body and the blood marks. You have one day to bring me the money. Asshole...'));
+    mails.push(_createMail('Order is ready', 'Come and get your shit.'));
+    mails.push(_createMail('KAPARA', 'Bo be imsha, al tihie eled.'));
+    mails.push(_createMail('SPAM SPAM ', 'Lorem stuffff comercial bla bla'));
+    return mails;
+}
+
+function _createMail(subject, body, ) {
+    const mail = {
+        id: utilService.makeId(),
+        subject,
+        body,
+        isRead: Math.random() > 0.5,
+        sentAt: new Date()
+    }
+    return mail;
 }
