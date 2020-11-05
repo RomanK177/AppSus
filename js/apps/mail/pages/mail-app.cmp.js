@@ -28,16 +28,19 @@ export default {
         mailsToShow() {
             if (!this.filterBy) return this.mails;
             const txt = this.filterBy.bySubject.toLowerCase();
-            return this.mails.filter(mail => (mail.subject.toLowerCase().includes(txt) ||
+            const { isRead } = this.filterBy
+            var mails = this.mails.filter(mail => {
+                return (mail.subject.toLowerCase().includes(txt) ||
                     (mail.from.toLowerCase().includes(txt)) ||
-                    (mail.body.toLowerCase().includes(txt))) &&
-
-                (
-                    mail.isRead && this.filterBy.isRead === "true" ||
-                    !mail.isRead && this.filterBy.isRead === "false" ||
-                    (mail.isRead || !mail.isRead) && this.filterBy.isRead === "null"
-                )
-            )
+                    (mail.body.toLowerCase().includes(txt)))
+            })
+            return mails.filter(mail => {
+                // if (this.filterBy.isRead === 'true') return mail.isRead;
+                // if (this.filterBy.isRead === 'false') return !mail.isRead;
+                if (isRead === 'true') return mail.isRead;
+                if (isRead === 'false') return !mail.isRead;
+                else return mail;
+            })
         },
         unReadCount() {
             let count = 0

@@ -3,17 +3,13 @@
 }
 
 .mail-preview {
-    position: relative;
-    display: grid;
-    /* height: 100%; */
-    width: 100%;
-    /* justify-content: center; */
-    /* grid-gap: 1.8rem; */
-    grid-template-columns: 2fr 2fr 8fr 1fr;
-    /* grid-auto-rows: 200px; */
-    margin: 0 auto;
-    /* padding-bottom: 80px; */
-    /* grid-auto-flow: dense; */
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mail-preview .sent-at {
+    align-self: flex-end;
 }
 
 .mail-preview .sent-at {
