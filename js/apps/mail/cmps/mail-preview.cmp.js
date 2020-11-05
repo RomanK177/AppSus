@@ -5,10 +5,10 @@ export default {
           
            <span class="sent-from">{{mail.from}}</span>
            
-        
+        <div class="prev-content">
            <span class="subject">{{mail.subject}}</span>
            <span class="body">{{mail.body}}</span>
-           
+        </div>
         
            <span class="sent-at">{{sentTime}}</span>
            

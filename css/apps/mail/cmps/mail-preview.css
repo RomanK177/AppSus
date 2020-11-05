@@ -8,6 +8,16 @@
     justify-content: space-between;
 }
 
+.mail-preview .prev-content {
+    width: 65%;
+    text-align: left;
+}
+
+.mail-preview .sent-from {
+    width: 25%;
+    text-align: left;
+}
+
 .mail-preview .sent-at {
     align-self: flex-end;
 }
