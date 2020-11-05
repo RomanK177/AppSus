@@ -9,9 +9,9 @@ export default {
     <section class="mail-list">
          <ul >
               <div v-for="currMail in mails" :key="currMail.id" >
-                <li @click.stop="mailClicked(currMail.id)" >
+                <li >
                    <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->
-                   <mail-preview :mail="currMail" @click.native="mailClicked()" />
+                   <mail-preview :mail="currMail" @click.native="mailClicked(),mailClicked(currMail.id)" />
                    <div class="prev-buttons">
                     <button @click="emitRemove(currMail.id)">&#128465</button>
                     <button @click="emitIsReadChange(currMail.id)">R</button>
