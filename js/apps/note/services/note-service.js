@@ -55,7 +55,7 @@ function _createNotes() {
     notes.push(_createNote('noteText', { txt: 'Fullstack Me Baby!' }));
     notes.push(_createNote('noteImg', { url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*' }));
     notes.push(_createNote('noteTodos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }));
-    notes.push(_createNote('noteVideo', { url: "http://youtube.com/video", title: "Youtube Video" }));
+    notes.push(_createNote('noteVideo', { url: 'https://www.youtube.com/embed/hY7m5jjJ9mM', title: 'Youtube Video' }));
     return notes;
 }
 
@@ -112,11 +112,17 @@ function addNote(noteData) {
             break;
         case 'noteVideo':
             infoObject = {
-                url: noteData.val
+                url: convertVidUrl(noteData.val)
             }
             break;
 
     }
     gNotes.push(_createNote(noteData.type, infoObject))
 
+}
+
+function convertVidUrl(url){
+// url = "https://youtube.com/watch?v=TESTURLNOTTOBEUSED"
+let convertedUrl = url.replace("watch?v=", "embed/")
+return convertedUrl
 }
