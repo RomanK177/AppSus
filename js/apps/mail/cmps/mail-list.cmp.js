@@ -1,4 +1,5 @@
 import mailPreview from './mail-preview.cmp.js'
+import mailDetail from './mail-detail.cmp.js'
 
 
 export default {
@@ -6,12 +7,17 @@ export default {
     template: `
     <section class="mail-list">
          <ul >
-                <li v-for="currMail in mails" :key="currMail.id" >
+              <div v-for="currMail in mails" :key="currMail.id" >
+                <li @click="emitRemove(currMail.id)" >
                    <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->
                    <mail-preview :mail="currMail" @click.native="mailClicked()" />
-                   <button @click="emitRemove(currMail.id)">&#128465</button>
-                   <button @click="emitIsReadChange(currMail.id)">R</button>
+                   <div class="prev-buttons">
+                    <button @click="emitRemove(currMail.id)">&#128465</button>
+                    <button @click="emitIsReadChange(currMail.id)">R</button>
+                   </div>
                 </li>
+                <mail-detail v-if="mailClicked" :mail="currMail" class="mail-detail"> Ss</mail-detail>
+                <div>
           </ul>
     </section>
 `,
@@ -23,11 +29,12 @@ export default {
             this.$emit('readChange', mailId)
         },
         mailClicked() {
-            // this.$router.push('/')
+            return true
         }
     },
     components: {
-        mailPreview
+        mailPreview,
+        mailDetail
     },
     created() {
         // console.log(this.mails)
