@@ -27,6 +27,6 @@ export default {
         mailPreview
     },
     created() {
-        console.log(this.mails)
+        // console.log(this.mails)
     },
 }

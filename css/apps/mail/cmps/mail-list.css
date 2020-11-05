@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-.mail-preview {
-    display: flex;
-    justify-content: space-between;
-}
-
 .mail-list ul li {
     display: flex;
     flex-flow: rows nowrap;
@@ -14,7 +9,6 @@
     border: lightgray 1px solid;
 }
 
-.mail-preview {
-    display: flex;
-    justify-content: space-between;
+.unread {
+    font-weight: bold;
 }

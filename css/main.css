@@ -6,7 +6,7 @@
 @import './apps/note/cmps/note-list.css';
 @import './home-page.css';
 @import './apps/mail/cmps/mail-list.css';
+@import './apps/mail/cmps/mail-preview.css';
 * {
     box-sizing: border-box;
 }
-
