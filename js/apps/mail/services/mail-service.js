@@ -70,7 +70,7 @@ function _createMail(subject, body, from) {
         subject,
         body,
         from,
-        isSent,
+        isSent: false,
         isRead: Math.random() > 0.5,
         sentAt: Date.now()
     }
