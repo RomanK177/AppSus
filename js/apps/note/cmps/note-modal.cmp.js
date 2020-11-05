@@ -3,9 +3,9 @@ import { noteService } from '../services/note-service.js'
 export default {
     props: ['note'],
     template: `
-    <section v-if="note" class="modal">
+    <section v-if="note">
     <div class="modal-backdrop">
-    <div class="modal">
+    <!-- <div v-for="currNote in notes" class="modal"> -->
       <header class="modal-header">
         <slot name="header">
         {{note.noteTitle}}
@@ -38,8 +38,10 @@ export default {
     // },
 
     // createdAt(){
-    //     noteService.getById(noteId)
-    //     .then
+    //   const id = this.$route.params.noteId;
+    //   carService.getById(id)
+    //       .then(note => this.note = note)
+
     // }
 
 }

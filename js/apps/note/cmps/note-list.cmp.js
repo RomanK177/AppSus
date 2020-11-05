@@ -8,12 +8,14 @@ export default {
         <section class="note-list">
             <ul >
                 <li v-for="currNote in notes" :key="currNote.id" >
-                   <note-preview :note="currNote" @click.native="showModal()" />
+                    <div class="note-card">
+                   <note-preview :note="currNote" @click.native="showModal()"></note-preview>
                    <!-- <note-modal :note="currNote" v-show="isShowModal" @close="closeModal" /> -->
                    <!-- <button id="show-modal" @click="showModal = true">Open Note</button> -->
                     <!-- use the modal component, pass in the prop -->
-                    <!-- <note-modal v-if="showModal" @close="showModal = false" />  -->
-                   <button @click="emitRemove(currNote.id)">x</button>
+                    <note-modal v-if="showModal" @close="showModal = false" /> 
+                   <button class="delete-btn" @click="emitRemove(currNote.id)">x</button>
+                   </div>
                 </li>
             </ul>
         </section>
