@@ -11,9 +11,10 @@ export default {
     <app-header></app-header>
     <!-- <p> Notes App</p> -->
     <note-filter @doFilter="setFilter" />
+     <!-- NOTE ADD CMP -->
+     <input type="text" v-model="noteData.val">
+    <button @click="setType('noteText')"> Add text </button>
     <note-list @remove="removeNote" :notes="notesToShow"/> 
-    
-
     <!-- <noteImg :notes="notes" v-for="note in note.notes" :type="notes.type" @setVal="setNoteType" ></noteImg> -->
     </section>
     
@@ -24,18 +25,23 @@ export default {
         return {
             notes: null,
             filterBy: null,
-            showModal: false
+            showModal: false,
+            noteData: {
+                val: '',
+                type: 'noteText'
+            }
         }
+
     },
     created() {
         noteService.getNotes()
-        .then(notes => this.notes = notes)
+            .then(notes => this.notes = notes)
         // console.log(notes)
     },
     methods: {
         setNoteType() {
             console.log('the current type of note is...')
-        }, 
+        },
         addNote() {
             noteService.addNote(this.noteToEdit);
             this.noteToEdit = noteService.getEmptyNote();
@@ -47,6 +53,10 @@ export default {
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
+        },
+
+        addNewNote() {
+            noteService.addNote(noteData)
         }
 
     },
@@ -55,7 +65,7 @@ export default {
             if (!this.filterBy) return this.notes;
             const txt = this.filterBy.noteTitle.toLowerCase();
             let filteredNotes = this.notes.filter(note => note.noteTitle.toLowerCase().includes(txt))
-            console.log('notestoshow',filteredNotes)
+            console.log('notestoshow', filteredNotes)
             return filteredNotes
         }
     },

@@ -1,4 +1,5 @@
 import { utilService } from "../../../services/util-service.js";
+import notePreviewCmp from "../cmps/note-preview.cmp.js";
 
 const STORAGE_KEY = "notessDB";
 
@@ -11,6 +12,7 @@ export const noteService = {
     removeNote,
     saveNote,
     getEmptyNote,
+    addNote
 }
 
 function getById(id) {
@@ -22,7 +24,7 @@ function getNotes() {
     // console.log(gNotes)
     return Promise.resolve(gNotes)
     // .then(console.log(gNotes))
-    
+
 }
 
 function removeNote(noteId) {
@@ -40,7 +42,7 @@ function saveNote(note) {
         gNotes.unshift(note);
     }
     return Promise.resolve(note)
-        // return Promise.reject('Big Badabum');
+    // return Promise.reject('Big Badabum');
 }
 
 function getEmptyNote() {
@@ -50,26 +52,43 @@ function getEmptyNote() {
 function _createNotes() {
     if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage
     const notes = []
-    notes.push(_createNote('NoteText', 'My Note', {txt: 'Fullstack Me Baby!'}, {backgroundColor: 'white', color: 'blue'}))
-    notes.push(_createNote('NoteImg', 'Dog Image', {url: "http://some-img/me", title: "Me playing Mi"}, {backgroundColor: 'inherit'}));
-    notes.push(_createNote('NoteTodos', 'My todos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null },{ txt: "Do this", doneAt: 187111111 }]}, {backgroundColor: 'inherit'}));
-    notes.push(_createNote('NoteVideo', 'Funny video', {url: "http://youtube.com/video", title: "Youtube Video"}, {backgroundColor: 'inherit'}));
+    notes.push(_createNote('noteText', { txt: 'Fullstack Me Baby!' }, { backgroundColor: 'white', color: 'blue' }))
+    notes.push(_createNote('noteImg', { url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*', title: "Me playing Mi" }, { backgroundColor: 'inherit' }));
+    notes.push(_createNote('noteTodos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }, { backgroundColor: 'inherit' }));
+    notes.push(_createNote('noteVideo', { url: "http://youtube.com/video", title: "Youtube Video" }, { backgroundColor: 'inherit' }));
     return notes;
 }
 
-function _createNote(type, noteTitle, info, style) {
+function _createNote(type, info) {
     const note = {
         id: utilService.makeId(),
         type,
-        noteTitle,
         info,
-        style,
         isPinned: Math.random() > 0.5,
         createdAt: new Date(),
     }
     return note;
 }
 
+
+
+
+function addNote(noteData) {
+    switch (noteData.type) {
+        case 'txt':
+            note.Data.type === 'noteText'
+            break;
+        case 'image':
+            note.Data.type === 'noteImg'
+            break;
+            case 'list':
+                note.Data.type === 'noteTodos'
+            break; 
+            case 'video':
+            note.Data.type === 'noteVideo'
+        break;
+    }
+}
 
 
 
