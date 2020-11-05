@@ -8,7 +8,7 @@ export default {
     <section class="mail-list">
          <ul >
               <div v-for="currMail in mails" :key="currMail.id" >
-                <li @click="emitRemove(currMail.id)" >
+                <li @click.stop="mailClicked" >
                    <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->
                    <mail-preview :mail="currMail" @click.native="mailClicked()" />
                    <div class="prev-buttons">
@@ -16,11 +16,16 @@ export default {
                     <button @click="emitIsReadChange(currMail.id)">R</button>
                    </div>
                 </li>
-                <mail-detail v-if="mailClicked" :mail="currMail" class="mail-detail"> Ss</mail-detail>
-                <div>
+                <mail-detail v-if="isCklicked" :isClicked="true" :mail="currMail" class="mail-detail"> Ss</mail-detail>
+               </div>
           </ul>
     </section>
 `,
+    data() {
+        return {
+            isCklicked: false,
+        }
+    },
     methods: {
         emitRemove(mailId) {
             this.$emit('remove', mailId)
@@ -29,6 +34,8 @@ export default {
             this.$emit('readChange', mailId)
         },
         mailClicked() {
+            console.log('mail clicked')
+            this.isCklicked = true
             return true
         }
     },
