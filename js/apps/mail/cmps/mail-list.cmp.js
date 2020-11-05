@@ -9,7 +9,8 @@ export default {
                 <li v-for="currMail in mails" :key="currMail.id" >
                    <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->
                    <mail-preview :mail="currMail" @click.native="mailClicked()" />
-                   <button @click="emitRemove(currMail.id)">x</button>
+                   <button @click="emitRemove(currMail.id)">&#128465</button>
+                   <button @click="emitIsReadChange(currMail.id)">R</button>
                 </li>
           </ul>
     </section>
@@ -17,6 +18,9 @@ export default {
     methods: {
         emitRemove(mailId) {
             this.$emit('remove', mailId)
+        },
+        emitIsReadChange(mailId) {
+            this.$emit('readChange', mailId)
         },
         mailClicked() {
             // this.$router.push('/')

@@ -11,6 +11,7 @@ export const mailService = {
     removeMail,
     saveMail,
     getEmptyMail,
+    changeRead,
 }
 
 function getById(id) {
@@ -25,6 +26,14 @@ function getMails() {
 function removeMail(mailId) {
     const idx = gMails.findIndex(mail => mail.id === mailId);
     gMails.splice(idx, 1);
+    utilService.storeToStorage(STORAGE_KEY, gMails)
+    return Promise.resolve()
+}
+
+function changeRead(mailId) {
+    const mail = gMails.find(mail => mail.id === mailId);
+    mail.isRead = (mail.isRead) ? false : true
+    utilService.storeToStorage(STORAGE_KEY, gMails)
     return Promise.resolve()
 }
 
