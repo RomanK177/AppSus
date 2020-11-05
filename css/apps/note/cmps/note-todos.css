@@ -8,3 +8,8 @@
     display: list-item;
     list-style: inside;
 }
+
+.note-todos-list{
+    padding-left: 0;
+
+}

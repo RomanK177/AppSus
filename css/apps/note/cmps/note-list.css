@@ -23,7 +23,7 @@ li{
     grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
     grid-auto-rows: 250px;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding: 0;
     grid-auto-flow: dense;
 }
 
