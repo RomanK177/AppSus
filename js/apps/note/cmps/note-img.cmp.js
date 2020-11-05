@@ -9,16 +9,7 @@ export default{
         <img :src="info.url"/>
     </section>
     `,
-// data (){
-//     return {
-//         val: '',
-//     }
-// },
-// methods: {
-//     reportVal() {
-//         this.$emit('setVal', this.val)
-//     }
-// }
+
         
     
 }

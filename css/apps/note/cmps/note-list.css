@@ -14,7 +14,7 @@ li{
     list-style: none;
 }
 
-.note-list ul {
+.note-list{
     display: grid;
     height: 100%;
     width: 100%;
@@ -27,23 +27,34 @@ li{
     grid-auto-flow: dense;
 }
 
-.note-card{
-    /* border: 1px solid rgb(162, 168, 173); */
+
+
+.card-container {
     box-shadow: lightskyblue 1px 1px 10px 1px;
-    /* background-color: rgb(195, 232, 245); */
     border-radius: 10px;
-    /* background-color: rgb(236, 243, 248); */
-    width: 250px;
-    height: 200px;
     padding-top: 10px;
     text-align: center;
 }
 
-.note-card:hover{
+.card-container:hover{
     border: lightskyblue 1px solid;
     box-shadow:rgb(162, 168, 173) 1px 1px 10px 1px;
 }
 
 /* .delete-btn{
-    margin-top: 10px;
+    margin-top: 30px;
+} */
+
+
+
+/* .note-card li{ */
+    /* border: 1px solid rgb(162, 168, 173); */
+    /* box-shadow: lightskyblue 1px 1px 10px 1px; */
+    /* background-color: rgb(195, 232, 245); */
+    /* border-radius: 10px; */
+    /* background-color: rgb(236, 243, 248); */
+    /* width: 250px; */
+    /* height: 200px;
+    padding-top: 10px;
+    text-align: center;
 } */

@@ -3,20 +3,34 @@
 }
 
 
-.note-preview{
-    /* border: 1px solid rgb(162, 168, 173);
+/* .note-preview{
+    border: 1px solid rgb(162, 168, 173);
     box-shadow: lightskyblue 1px 1px 10px 1px;
-    /* background-color: rgb(195, 232, 245); */
-    /* border-radius: 10px; */
-    /* background-color: rgb(236, 243, 248); */
-    /* width: 250px;
+    background-color: rgb(195, 232, 245);
+    border-radius: 10px;
+    background-color: rgb(236, 243, 248);
+    width: 250px;
     height: 200px;
     padding-top: 10px;
-    text-align: center; */ 
+    text-align: center; 
    
 }
 
-/* .note-preview:hover{
+.note-preview:hover{
+    border: lightskyblue 1px solid;
+    box-shadow:rgb(162, 168, 173) 1px 1px 10px 1px;
+} */
+/* 
+.note-preview{
+    box-shadow: lightskyblue 1px 1px 10px 1px;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.note-preview:hover{
     border: lightskyblue 1px solid;
     box-shadow:rgb(162, 168, 173) 1px 1px 10px 1px;
 } */

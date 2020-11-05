@@ -2,7 +2,7 @@
 export default {
     template: `
         <section class="note-filter">
-            <input type="text" v-model="filterBy.noteTitle" placeholder="Search here" class="note-filtersearch" @input="emitFilter" />
+            <input type="text" v-model="filterBy.type" placeholder="Search here" class="note-filtersearch" @input="emitFilter" />
             <!-- <label>
                 <input type="checkbox" v-model="filterBy.isPinned" @input="emitFilter" /> 
                 Show Pinned Notes

@@ -10,12 +10,8 @@ export default {
     template: ` 
     <section v-if="notes" class="note-app">
     <app-header></app-header>
-    <!-- <p> Notes App</p> -->
     <note-filter @doFilter="setFilter" />
-     <!-- NOTE ADD CMP -->
      <note-add></note-add>
-     <!-- <input type="text" v-model="noteData.val">
-    <button @click="setType('noteText')"> Add text </button> -->
     <note-list @remove="removeNote" :notes="notesToShow"/> 
     <!-- <noteImg :notes="notes" v-for="note in note.notes" :type="notes.type" @setVal="setNoteType" ></noteImg> -->
     </section>
@@ -64,9 +60,10 @@ export default {
     },
     computed: {
         notesToShow() {
+            // let {info} = this.note.info
             if (!this.filterBy) return this.notes;
-            const txt = this.filterBy.noteTitle.toLowerCase();
-            let filteredNotes = this.notes.filter(note => note.noteTitle.toLowerCase().includes(txt))
+            const txt = this.filterBy.type.toLowerCase();
+            let filteredNotes = this.notes.filter(note => note.type.toLowerCase().includes(txt))
             console.log('notestoshow', filteredNotes)
             return filteredNotes
         }

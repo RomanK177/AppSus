@@ -23,7 +23,7 @@ function getById(id) {
 function getNotes() {
     // console.log(gNotes)
     return Promise.resolve(gNotes)
-    // .then(console.log(gNotes))
+        // .then(console.log(gNotes))
 
 }
 
@@ -42,7 +42,7 @@ function saveNote(note) {
         gNotes.unshift(note);
     }
     return Promise.resolve(note)
-    // return Promise.reject('Big Badabum');
+        // return Promise.reject('Big Badabum');
 }
 
 function getEmptyNote() {
@@ -53,7 +53,7 @@ function _createNotes() {
     if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage
     const notes = []
     notes.push(_createNote('noteText', { txt: 'Fullstack Me Baby!' }));
-    notes.push(_createNote('noteImg', { url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*'}));
+    notes.push(_createNote('noteImg', { url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*' }));
     notes.push(_createNote('noteTodos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }));
     notes.push(_createNote('noteVideo', { url: "http://youtube.com/video", title: "Youtube Video" }));
     return notes;
@@ -71,28 +71,31 @@ function _createNote(type, info) {
 }
 
 function addNote(noteData) {
+    let infoObject = {}
+    console.log(noteData)
     switch (noteData.type) {
         case 'noteText':
-            noteData.type = 'noteText'
+            infoObject = {
+                txt: noteData.val
+            }
             break;
         case 'noteImg':
-            noteData.type = 'noteImg'
+            infoObject = {
+                url: noteData.val
+            }
             break;
         case 'noteTodos':
-            noteData.type = 'noteTodos'
+            infoObject = {
+                label: noteData.val
+            }
             break;
         case 'noteVideo':
-            noteData.type = 'noteVideo'
+            infoObject = {
+                url: noteData.val
+            }
             break;
-           
+
     }
-   gNotes.push(_createNote(noteData.type, noteData.val))
+    gNotes.push(_createNote(noteData.type, infoObject))
 
 }
-
-
-
-
-
-
-
