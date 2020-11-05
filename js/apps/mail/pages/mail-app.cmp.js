@@ -14,7 +14,7 @@ export default {
     `,
     data() {
         return {
-            filterBy: null,
+            filterBy: undefined,
             mails: null,
         }
     },
@@ -32,8 +32,9 @@ export default {
                     (mail.body.toLowerCase().includes(txt))) &&
 
                 (
-                    mail.isRead && this.filterBy.isRead ||
-                    !mail.isRead && !this.filterBy.isRead
+                    mail.isRead && this.filterBy.isRead === "true" ||
+                    !mail.isRead && this.filterBy.isRead === "false" ||
+                    (mail.isRead || !mail.isRead) && this.filterBy.isRead === "null"
                 )
             )
         }
@@ -55,10 +56,10 @@ export default {
     created() {
         mailService.getMails()
             .then(mails => this.mails = mails)
-        console.log("created -> this.mails", this.mails)
+
     },
     mounted() {
-        console.log("created -> this.mails", this.mails)
+
     },
 
 }
