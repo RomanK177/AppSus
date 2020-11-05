@@ -52,10 +52,10 @@ function getEmptyNote() {
 function _createNotes() {
     if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage
     const notes = []
-    notes.push(_createNote('noteText', { txt: 'Fullstack Me Baby!' }, { backgroundColor: 'white', color: 'blue' }))
-    notes.push(_createNote('noteImg', { url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*', title: "Me playing Mi" }, { backgroundColor: 'inherit' }));
-    notes.push(_createNote('noteTodos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }, { backgroundColor: 'inherit' }));
-    notes.push(_createNote('noteVideo', { url: "http://youtube.com/video", title: "Youtube Video" }, { backgroundColor: 'inherit' }));
+    notes.push(_createNote('noteText', { txt: 'Fullstack Me Baby!' }));
+    notes.push(_createNote('noteImg', { url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*'}));
+    notes.push(_createNote('noteTodos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }));
+    notes.push(_createNote('noteVideo', { url: "http://youtube.com/video", title: "Youtube Video" }));
     return notes;
 }
 
@@ -70,26 +70,23 @@ function _createNote(type, info) {
     return note;
 }
 
-
-
-
 function addNote(noteData) {
     switch (noteData.type) {
-        case 'txt':
+        case 'noteText':
             noteData.type === 'noteText'
             break;
-        case 'image':
+        case 'noteImg':
             noteData.type === 'noteImg'
             break;
-        case 'list':
+        case 'noteTodos':
             noteData.type === 'noteTodos'
             break;
-        case 'video':
+        case 'noteVideo':
             noteData.type === 'noteVideo'
             break;
            
     }
-    _createNote(noteData.type, noteData.info)
+    _createNote(noteData.type, noteData.val)
 
 }
 

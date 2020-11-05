@@ -3,6 +3,7 @@ import { noteService } from "../services/note-service.js";
 import appHeader from '../../../cmps/app-header.cmp.js'
 import noteList from '../cmps/note-list.cmp.js'
 import noteFilter from '../cmps/note-filter.cmp.js'
+import noteAdd from '../cmps/note-add.cmp.js'
 import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
@@ -12,8 +13,9 @@ export default {
     <!-- <p> Notes App</p> -->
     <note-filter @doFilter="setFilter" />
      <!-- NOTE ADD CMP -->
-     <input type="text" v-model="noteData.val">
-    <button @click="setType('noteText')"> Add text </button>
+     <note-add></note-add>
+     <!-- <input type="text" v-model="noteData.val">
+    <button @click="setType('noteText')"> Add text </button> -->
     <note-list @remove="removeNote" :notes="notesToShow"/> 
     <!-- <noteImg :notes="notes" v-for="note in note.notes" :type="notes.type" @setVal="setNoteType" ></noteImg> -->
     </section>
@@ -73,7 +75,8 @@ export default {
     components: {
         appHeader,
         noteList,
-        noteFilter
+        noteFilter,
+        noteAdd
         // noteImg
 
     },
