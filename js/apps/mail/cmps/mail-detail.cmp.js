@@ -12,9 +12,4 @@ export default {
 
         }
     },
-    created() {
-        // const id = this.$route.params.carId;
-        // carService.getById(id)
-        //     .then(car => this.car = car)
-    }
 }

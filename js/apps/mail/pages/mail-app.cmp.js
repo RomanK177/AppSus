@@ -10,7 +10,7 @@ export default {
       <!-- <p> Mail App</p> -->
       <mail-filter @doFilter="setFilter"></mail-filter>
       <p v-if="mails">Unread mails: {{unReadCount}}</p>
-      <mail-list :mails="mailsToShow" @remove="removeMail" @readChange="changeRead" @clickedChange="changeClicked" ></mail-list>
+      <mail-list v-if="mails" :mails="mailsToShow" @remove="removeMail" @readChange="changeRead" @clickedChange="changeClicked" ></mail-list>
       </section>
     `,
     data() {

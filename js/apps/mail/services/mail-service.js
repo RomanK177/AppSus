@@ -41,7 +41,6 @@ function changeRead(mailId) {
 function changeClicked(mailId) {
     const mail = gMails.find(mail => mail.id === mailId);
     mail.isClicked = (mail.isClicked) ? false : true
-    console.log('sss', mail)
         // utilService.storeToStorage(STORAGE_KEY, gMails)
     return Promise.resolve()
 }

@@ -3,6 +3,7 @@ import mailDetail from './mail-detail.cmp.js'
 
 
 export default {
+    name: 'Mail-List',
     props: ['mails'],
     template: `
     <section class="mail-list">
@@ -16,7 +17,7 @@ export default {
                     <button @click="emitIsReadChange(currMail.id)">R</button>
                    </div>
                 </li>
-                <mail-detail :mail="currMail" class="mail-detail"> Ss</mail-detail>
+                <mail-detail :mail="currMail" class="mail-detail"> </mail-detail>
                </div>
           </ul>
     </section>
