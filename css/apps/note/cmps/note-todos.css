@@ -1,0 +1,10 @@
+
+.note-todos-list ul{
+    /* list-style: circle; */
+    display: inline-block;
+}
+
+.note-todos-list li{
+    display: list-item;
+    list-style: inside;
+}

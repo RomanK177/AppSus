@@ -1,14 +1,15 @@
 .note-filter{
     display: flex;
-    padding-bottom: 30px;
+    margin: 1rem;
+    /* padding-bottom: 30px; */
 }
 
 .note-filter input{
-    height: 60px;
-    width: 600px;
+    width: 270px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 3px;
     margin: 0 auto;
     border: lightskyblue 1px solid
 
 }
+

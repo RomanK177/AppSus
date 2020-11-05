@@ -1,4 +1,5 @@
 @import './apps/note/cmps/note-modal.css';
+@import './apps/note/cmps/note-add.css';
 @import './apps/note/cmps/note-img.css';
 @import './app-header.css';
 @import './apps/note/cmps/note-filter.css';
@@ -9,6 +10,12 @@
 @import './apps/mail/cmps/mail-list.css';
 @import './apps/mail/cmps/mail-preview.css';
 @import './apps/mail/cmps/mail-filter.css';
+@import './apps/note/cmps/note-todos.css';
+
 * {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
 }
