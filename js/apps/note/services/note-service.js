@@ -76,18 +76,21 @@ function _createNote(type, info) {
 function addNote(noteData) {
     switch (noteData.type) {
         case 'txt':
-            note.Data.type === 'noteText'
+            noteData.type === 'noteText'
             break;
         case 'image':
-            note.Data.type === 'noteImg'
+            noteData.type === 'noteImg'
             break;
-            case 'list':
-                note.Data.type === 'noteTodos'
-            break; 
-            case 'video':
-            note.Data.type === 'noteVideo'
-        break;
+        case 'list':
+            noteData.type === 'noteTodos'
+            break;
+        case 'video':
+            noteData.type === 'noteVideo'
+            break;
+           
     }
+    _createNote(noteData.type, noteData.info)
+
 }
 
 
