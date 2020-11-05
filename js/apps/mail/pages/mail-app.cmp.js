@@ -7,7 +7,7 @@ export default {
     template: ` 
      <section class="mail-app">
      <appHeader></appHeader>
-      <p> Mail App</p>
+      <!-- <p> Mail App</p> -->
       <mail-filter @doFilter="setFilter"></mail-filter>
       <mailList :mails="mailsToShow" ></mailList>
       </section>

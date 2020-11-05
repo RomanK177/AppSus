@@ -5,7 +5,6 @@ export default {
     props: ['mails'],
     template: `
     <section class="mail-list">
-         <h2>Your mails</h2>
          <ul >
                 <li v-for="currMail in mails" :key="currMail.id" >
                    <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->

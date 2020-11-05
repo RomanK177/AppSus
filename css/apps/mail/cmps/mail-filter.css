@@ -1,0 +1,24 @@
+.mail-filter {
+    display: inline;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mail-filter input {
+    height: 30px;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    border: lightskyblue 1px solid
+}
+
+.mail-filter select {
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    border: lightskyblue 1px solid
+}
