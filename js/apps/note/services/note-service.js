@@ -86,7 +86,7 @@ function addNote(noteData) {
             break;
            
     }
-    _createNote(noteData.type, noteData.val)
+    _createNote(noteData.type, noteData.info)
 
 }
 

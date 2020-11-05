@@ -11,7 +11,7 @@ export default {
         <option value="noteTodos">Todo List</option>
         <option value="noteVideo">Video</option>
     </select>
-    <button @click="addNewNote"> Add Note </button>
+    <button @click="addNewNote()"> Add Note </button>
     <!-- <button @click="setType('noteText')"> Add text </button> -->
 
     </section>
@@ -19,25 +19,7 @@ export default {
     `,
 
 
-// function addNote(noteData) {
-//     switch (noteData.type) {
-//         case 'txt':
-//             noteData.type === 'noteText'
-//             break;
-//         case 'image':
-//             noteData.type === 'noteImg'
-//             break;
-//         case 'list':
-//             noteData.type === 'noteTodos'
-//             break;
-//         case 'video':
-//             noteData.type === 'noteVideo'
-//             break;
-           
-//     }
-//     _createNote(noteData.type, noteData.val)
 
-// }
 
     data() {
         return {
@@ -49,7 +31,7 @@ export default {
     },
     methods: {
         addNewNote() {
-            noteService.addNote(noteData)
+            noteService.addNote(this.noteData)
         }
 
 
