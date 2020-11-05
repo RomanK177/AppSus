@@ -3,7 +3,7 @@
 }
 
 .mail-preview {
-    width: 95%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
 }
@@ -13,8 +13,15 @@
     text-align: left;
 }
 
+.mail-preview .prev-buttons {
+    width: 10%;
+    /* flex-grow: 1; */
+    display: flex;
+    flex-flow: row nowrap;
+}
+
 .mail-preview .sent-from {
-    width: 25%;
+    flex-grow: 1;
     text-align: left;
 }
 

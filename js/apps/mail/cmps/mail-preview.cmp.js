@@ -7,7 +7,7 @@ export default {
            
         <div class="prev-content">
            <span class="subject">{{mail.subject}}</span>
-           <span class="body">{{mail.body}}</span>
+           <span class="body">-{{previewBody}}</span>
         </div>
         
            <span class="sent-at">{{sentTime}}</span>
@@ -22,6 +22,9 @@ export default {
         },
         previewClass() {
             return { unread: !this.mail.isRead }
+        },
+        previewBody() {
+            return this.mail.body.slice(0, 20) + '...'
         }
     },
 }

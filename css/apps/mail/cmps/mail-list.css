@@ -2,11 +2,16 @@
     box-sizing: border-box;
 }
 
+.mail-list ul {
+    padding: 0;
+}
+
 .mail-list ul li {
     display: flex;
     flex-flow: rows nowrap;
     justify-content: space-between;
     border: lightgray 1px solid;
+    background-color: rgba(197, 233, 255, 0.719);
 }
 
 .unread {
