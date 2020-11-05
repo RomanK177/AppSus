@@ -3,27 +3,28 @@ import mailDetail from './mail-detail.cmp.js'
 
 
 export default {
+    name: 'Mail-List',
     props: ['mails'],
     template: `
     <section class="mail-list">
          <ul >
               <div v-for="currMail in mails" :key="currMail.id" >
-                <li @click.stop="mailClicked" >
+                <li >
                    <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->
-                   <mail-preview :mail="currMail" @click.native="mailClicked()" />
+                   <mail-preview :mail="currMail" @click.native="mailClicked(),mailClicked(currMail.id)" />
                    <div class="prev-buttons">
                     <button @click="emitRemove(currMail.id)">&#128465</button>
                     <button @click="emitIsReadChange(currMail.id)">R</button>
                    </div>
                 </li>
-                <mail-detail v-if="isCklicked" :isClicked="true" :mail="currMail" class="mail-detail"> Ss</mail-detail>
+                <mail-detail :mail="currMail" class="mail-detail"> </mail-detail>
                </div>
           </ul>
     </section>
 `,
     data() {
         return {
-            isCklicked: false,
+
         }
     },
     methods: {
@@ -33,10 +34,10 @@ export default {
         emitIsReadChange(mailId) {
             this.$emit('readChange', mailId)
         },
-        mailClicked() {
+        mailClicked(mailId) {
             console.log('mail clicked')
-            this.isCklicked = true
-            return true
+            this.$emit('clickedChange', mailId)
+
         }
     },
     components: {

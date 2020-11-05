@@ -12,6 +12,7 @@ export const mailService = {
     saveMail,
     getEmptyMail,
     changeRead,
+    changeClicked,
 }
 
 function getById(id) {
@@ -34,6 +35,13 @@ function changeRead(mailId) {
     const mail = gMails.find(mail => mail.id === mailId);
     mail.isRead = (mail.isRead) ? false : true
     utilService.storeToStorage(STORAGE_KEY, gMails)
+    return Promise.resolve()
+}
+
+function changeClicked(mailId) {
+    const mail = gMails.find(mail => mail.id === mailId);
+    mail.isClicked = (mail.isClicked) ? false : true
+        // utilService.storeToStorage(STORAGE_KEY, gMails)
     return Promise.resolve()
 }
 
@@ -71,6 +79,7 @@ function _createMail(subject, body, from) {
         body,
         from,
         isSent: false,
+        isClicked: false,
         isRead: Math.random() > 0.5,
         sentAt: Date.now()
     }
