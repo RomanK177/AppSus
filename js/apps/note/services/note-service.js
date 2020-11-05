@@ -73,20 +73,20 @@ function _createNote(type, info) {
 function addNote(noteData) {
     switch (noteData.type) {
         case 'noteText':
-            noteData.type === 'noteText'
+            noteData.type = 'noteText'
             break;
         case 'noteImg':
-            noteData.type === 'noteImg'
+            noteData.type = 'noteImg'
             break;
         case 'noteTodos':
-            noteData.type === 'noteTodos'
+            noteData.type = 'noteTodos'
             break;
         case 'noteVideo':
-            noteData.type === 'noteVideo'
+            noteData.type = 'noteVideo'
             break;
            
     }
-    _createNote(noteData.type, noteData.info)
+   gNotes.push(_createNote(noteData.type, noteData.val))
 
 }
 
