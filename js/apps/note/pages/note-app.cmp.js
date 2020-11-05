@@ -2,14 +2,15 @@ import { noteService } from "../services/note-service.js";
 // import noteImg from '../cmps/note-img.cmp.js'
 import appHeader from '../../../cmps/app-header.cmp.js'
 import noteList from '../cmps/note-list.cmp.js'
-// import noteFilter from '../cmps/car/car-filter.cmp.js';
+import noteFilter from '../cmps/note-filter.cmp.js'
 import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
     template: ` 
     <section v-if="notes" class="note-app">
-    <appHeader></appHeader>
-    <p> Notes App</p>
+    <app-header></app-header>
+    <!-- <p> Notes App</p> -->
+    <note-filter @doFilter="setFilter" />
     <note-list @remove="removeNote" :notes="notesToShow"/> 
     
 
@@ -22,7 +23,8 @@ export default {
     data() {
         return {
             notes: null,
-            filterBy: null
+            filterBy: null,
+            showModal: false
         }
     },
     created() {
@@ -35,11 +37,11 @@ export default {
             console.log('the current type of note is...')
         }, 
         addNote() {
-            noteService.add(this.noteToEdit);
+            noteService.addNote(this.noteToEdit);
             this.noteToEdit = noteService.getEmptyNote();
         },
         removeNote(noteId) {
-            noteService.remove(noteId)
+            noteService.removeNote(noteId)
                 .then(() => eventBus.$emit('show-msg', 'Note Deleted'))
                 .catch(err => console.log('something went wrong', err))
         },
@@ -60,7 +62,8 @@ export default {
 
     components: {
         appHeader,
-        noteList
+        noteList,
+        noteFilter
         // noteImg
 
     },

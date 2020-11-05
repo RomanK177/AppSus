@@ -1,0 +1,49 @@
+
+@font-face {
+
+        font-family: inco;
+        src: url(../assets/fonts/inconsolata/Inconsolata-Regular.ttf);
+
+}
+
+.logo{
+    color: lightslategray;
+   font-family: inco;
+    font-style: italic;
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+   background-color: rgba(230, 227, 227, 0.856);
+   border-radius: 5px;
+}
+
+.logo span{
+    color: lightskyblue
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.notes-nav{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.home-nav, .notes-nav, .mail-nav{
+    list-style: none;
+    text-decoration: none;
+    color: lightskyblue;
+    border: lightslategrey 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.home-nav:hover, .notes-nav:hover, .mail-nav:hover{
+    color: rgb(162, 168, 173);
+    border: lightskyblue 1px solid;
+    box-shadow: 1px 1px 10px 1px;
+
+}

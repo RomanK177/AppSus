@@ -1,19 +1,28 @@
 import notePreview from './note-preview.cmp.js'
+import noteModal from './note-modal.cmp.js'
 
 
 export default {
     props:['notes'],
     template: `
         <section class="note-list">
-            <h2>Your Notes</h2>
             <ul >
                 <li v-for="currNote in notes" :key="currNote.id" >
-                   <note-preview :note="currNote" @click.native="noteClicked()" />
+                   <note-preview :note="currNote" @click.native="showModal()" />
+                   <!-- <note-modal :note="currNote" v-show="isShowModal" @close="closeModal" /> -->
+                   <!-- <button id="show-modal" @click="showModal = true">Open Note</button> -->
+                    <!-- use the modal component, pass in the prop -->
+                    <!-- <note-modal v-if="showModal" @close="showModal = false" />  -->
                    <button @click="emitRemove(currNote.id)">x</button>
                 </li>
             </ul>
         </section>
     `,
+      data () {
+        return {
+          isShowModal: false,
+        }
+      },
     methods: {
         emitRemove(noteId) {
             // console.log('OK', noteId);
@@ -21,9 +30,17 @@ export default {
         },
         noteClicked() {
             // this.$router.push('/')
-        }
+        },
+        showModal() {
+            this.isShowModal = true;
+        },
+        closeModal() {
+            this.isShowModal = false;
+        },
+    
     },
     components:{
-        notePreview
+        notePreview,
+        noteModal
     }
 }
