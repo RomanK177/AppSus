@@ -10,7 +10,7 @@ export default {
       <!-- <p> Mail App</p> -->
       <mail-filter @doFilter="setFilter"></mail-filter>
       <p v-if="mails">Unread mails: {{unReadCount}}</p>
-      <mail-list :mails="mailsToShow" @remove="removeMail" @readChange="changeRead" ></mail-list>
+      <mail-list :mails="mailsToShow" @remove="removeMail" @readChange="changeRead" @clickedChange="changeClicked" ></mail-list>
       </section>
     `,
     data() {
@@ -61,6 +61,11 @@ export default {
         changeRead(mailId) {
             mailService.changeRead(mailId)
                 .then(() => eventBus.$emit('show-msg', 'Mail Read Updated'))
+                .catch(err => console.log('something went wrong', err))
+        },
+        changeClicked(mailId) {
+            mailService.changeClicked(mailId)
+                .then(() => eventBus.$emit('show-msg', 'Mail Clicked Updated'))
                 .catch(err => console.log('something went wrong', err))
         },
         setFilter(filterBy) {
