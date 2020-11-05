@@ -1,12 +1,14 @@
 import { mailService } from "../services/mail-service.js";
 import appHeader from '../../../cmps/app-header.cmp.js'
 import mailList from '../cmps/mail-list.cmp.js'
+import mailFilter from '../cmps/mail-filter.cmp.js'
 
 export default {
     template: ` 
      <section class="mail-app">
      <appHeader></appHeader>
       <p> Mail App</p>
+      <mail-filter @doFilter="setFilter"></mail-filter>
       <mailList :mails="mailsToShow" ></mailList>
       </section>
     `,
@@ -19,12 +21,16 @@ export default {
     components: {
         appHeader,
         mailList,
+        mailFilter,
     },
     computed: {
         mailsToShow() {
             if (!this.filterBy) return this.mails;
             const txt = this.filterBy.bySubject.toLowerCase();
-            return this.mails.filter(mail => mail.subject.toLowerCase().includes(txt) &&
+            return this.mails.filter(mail => (mail.subject.toLowerCase().includes(txt) ||
+                    (mail.from.toLowerCase().includes(txt)) ||
+                    (mail.body.toLowerCase().includes(txt))) &&
+
                 (
                     mail.isRead && this.filterBy.isRead ||
                     !mail.isRead && !this.filterBy.isRead
