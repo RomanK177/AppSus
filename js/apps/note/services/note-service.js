@@ -70,6 +70,20 @@ function _createNote(type, info) {
     return note;
 }
 
+
+
+// let introduction = ["Hello", "I" , "am", "Sarah"];
+// let greeting = introduction[0];
+// let name = introduction[3];
+
+// console.log(greeting);//"Hello"
+// console.log(name);//"Sarah"
+
+// todos: [ {text: '', doneAt: ''}, {text: '', doneAt: ''}]
+
+// let txt = todos[0].txt
+
+
 function addNote(noteData) {
     let infoObject = {}
     console.log(noteData)
@@ -85,8 +99,15 @@ function addNote(noteData) {
             }
             break;
         case 'noteTodos':
+            let todoList = noteData.val
+            let strs = todoList.split(',')
+            let strTodos = strs.map(str => {
+                return {txt: str, doneAt: Date.now()}
+            })
             infoObject = {
-                label: noteData.val
+                label: '',
+                todos: strTodos
+                
             }
             break;
         case 'noteVideo':

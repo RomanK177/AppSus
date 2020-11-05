@@ -4,7 +4,7 @@ export default {
     name: 'note-add',
     template: `
     <section class="note-add"> 
-    <input @keyup.enter="addNewNote()" type="text" v-model="noteData.val">
+    <input @keyup.enter="addNewNote()" type="text" v-model="noteData.val" v-if="renderTodos">
     <select v-model="noteData.type">
         <option value="noteText">Text</option>
         <option value="noteImg">Image</option>
@@ -30,6 +30,15 @@ export default {
         addNewNote() {
             noteService.addNote(this.noteData)
             this.noteData.val = '';
+        },
+        renderTodos() {
+            if (noteData.type === 'noteTodos') {
+                let todoList = noteData.val
+                if (todoList.includes(',')) {
+                    todoList.split(',')
+
+                }
+            }
         }
 
 
