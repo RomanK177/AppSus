@@ -45,13 +45,7 @@ function changeClicked(mailId) {
     return Promise.resolve()
 }
 
-<<<<<<< HEAD
-
-
-function saveMail(mail) {
-=======
 function sendMail(mail) {
->>>>>>> 4d5907c115bf4277cee5eed473c8580569e699c6
     if (mail.id) {
         const mailIdx = gMail.findIndex(currMail => mail.id === currMail.id)
         gMails.splice(mailIdx, 1, mail)

@@ -7,7 +7,7 @@ export default {
     <section class="note-editor">
         <input v-if="note"  type="color" v-model="note.bgC" @input="saveNote(note)" />
         <button class="delete-btn" @click="emitRemove(note.id)">x</button>
-        <button @click="toggleePinned">Pin</button>
+        <button :class="{pinned: isPinned}" @click="note.isPinned = true">Pin</button>
     </section>
 
 
@@ -18,9 +18,11 @@ export default {
 `,
 
 
-    // data() {
-        
-    // },
+    data() {
+        return{
+            isPinned: true
+        }
+    },
     methods: {
         emitRemove(noteId) {
             // console.log('OK', noteId);
@@ -34,6 +36,7 @@ export default {
         },
         togglePinned(){
             !this.isPinned === this.isPinned
-        }
+        },
+        
     }
 }

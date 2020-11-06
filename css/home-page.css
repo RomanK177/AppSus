@@ -4,7 +4,7 @@
 
 
 .homepage{
-    background-image: url(../assets/imgs/home-page.jpeg);
+    background: url(../assets/imgs/snap2.jpeg) no-repeat center / cover fixed;
      /* background-repeat: no-repeat;  */
     /* background-size: 100%; */
     /* object-fit: contain;  */
@@ -23,4 +23,13 @@ padding: 80px;
 
 .homepage-txt h1{
     font-size: 80px
+}
+
+.mail-icon{
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    background-color: rgba(252, 252, 249, 0.445);
+    border: 1px solid blue;
+    border-radius: 10px;
 }
