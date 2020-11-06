@@ -36,6 +36,6 @@ export default {
         }
     },
     created() {
-        console.log('currF', this.currFolder)
+
     },
 }

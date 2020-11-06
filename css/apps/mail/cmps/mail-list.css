@@ -18,8 +18,13 @@
     background-color: rgba(197, 233, 255, 0.719);
 }
 
+.prev-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
 .unread {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .star {

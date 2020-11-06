@@ -2,7 +2,18 @@
     box-sizing: border-box;
 }
 
-.mail-app {
-    display: flex;
-    flex-flow: column;
+.filter-counter {
+    align-items: center;
+}
+
+.unread-count {
+    /* display: contents; */
+    border: 1px solid;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    height: 30px;
+    padding: 4px 5px 4px 5px;
+    ;
+    border: lightskyblue 1px solid
 }

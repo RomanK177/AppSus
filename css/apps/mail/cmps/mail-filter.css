@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .mail-filter {
     display: inline;
     text-align: center;

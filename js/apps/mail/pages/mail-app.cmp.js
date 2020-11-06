@@ -7,11 +7,12 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 
 export default {
     template: ` 
-    <section class="mail-app">
+    <section class="mail-app container">
      <app-header></app-header>
-      <!-- <p> Mail App</p> -->
+      <div class="filter-counter flex">
       <mail-filter @doFilter="setFilter"></mail-filter>
-      <p v-if="mails">Unread mails: {{unReadCount}}</p>
+      <span class="unread-count" v-if="mails">Unread mails: {{unReadCount}}</span>
+      </div>
         <div class="flex">
             <folder-bar :currFolder="currFolder" @doFolder="setFolder" class="flex-column"></folder-bar>
          <mail-list v-if="mails" :mails="folderedMails" @remove="removeMail" @readChange="changeRead" @starChange="changeStar" @clickedChange="changeClicked" ></mail-list>
