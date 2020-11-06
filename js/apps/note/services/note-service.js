@@ -1,7 +1,7 @@
-import { utilService } from "../../../services/util-service.js";
+import { utilService } from '../../../services/util-service.js'
 import notePreviewCmp from "../cmps/note-preview.cmp.js";
 
-const STORAGE_KEY = "notessDB";
+const STORAGE_KEY = "notesDB";
 
 
 const gNotes = _createNotes()
@@ -30,17 +30,19 @@ function getNotes() {
 function removeNote(noteId) {
     const idx = gNotes.findIndex(note => note.id === noteId);
     gNotes.splice(idx, 1);
+    utilService.storeToStorage(STORAGE_KEY, gNotes)
     return Promise.resolve()
 }
 
 function saveNote(note) {
     if (note.id) {
-        const noteIdx = note.findIndex(currNote => note.id === currNote.id)
+        const noteIdx = gNotes.findIndex(currNote => note.id === currNote.id)
         gNotes.splice(noteIdx, 1, note)
-    } else {
+    } else { 
         note.id = utilService.makeId();
         gNotes.unshift(note);
     }
+    utilService.storeToStorage(STORAGE_KEY, gNotes)
     return Promise.resolve(note)
         // return Promise.reject('Big Badabum');
 }
@@ -50,12 +52,13 @@ function getEmptyNote() {
 }
 
 function _createNotes() {
-    if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage
+    if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage(STORAGE_KEY)
     const notes = []
     notes.push(_createNote('noteText', { txt: 'Fullstack Me Baby!' }));
     notes.push(_createNote('noteImg', { url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*' }));
     notes.push(_createNote('noteTodos', { label: "How was it:", todos: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }));
     notes.push(_createNote('noteVideo', { url: 'https://www.youtube.com/embed/hY7m5jjJ9mM', title: 'Youtube Video' }));
+    utilService.storeToStorage(STORAGE_KEY, notes)
     return notes;
 }
 
@@ -64,7 +67,8 @@ function _createNote(type, info) {
         id: utilService.makeId(),
         type,
         info,
-        isPinned: Math.random() > 0.5,
+        bgC: '#FFFFFF',
+        isPinned: false,
         createdAt: new Date(),
     }
     return note;
@@ -72,16 +76,6 @@ function _createNote(type, info) {
 
 
 
-// let introduction = ["Hello", "I" , "am", "Sarah"];
-// let greeting = introduction[0];
-// let name = introduction[3];
-
-// console.log(greeting);//"Hello"
-// console.log(name);//"Sarah"
-
-// todos: [ {text: '', doneAt: ''}, {text: '', doneAt: ''}]
-
-// let txt = todos[0].txt
 
 
 function addNote(noteData) {

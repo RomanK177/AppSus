@@ -7,9 +7,9 @@ export default {
         <p>{{mail.body}}</p>
     </section>
     `,
-    data() {
-        return {
+    // data() {
+    //     return {
 
-        }
-    },
+    //     }
+    // },
 }

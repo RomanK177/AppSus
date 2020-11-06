@@ -45,6 +45,8 @@ function changeClicked(mailId) {
     return Promise.resolve()
 }
 
+
+
 function saveMail(mail) {
     if (mail.id) {
         const mailIdx = gMail.findIndex(currMail => mail.id === currMail.id)

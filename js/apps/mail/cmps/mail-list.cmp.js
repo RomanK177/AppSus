@@ -22,11 +22,11 @@ export default {
           </ul>
     </section>
 `,
-    data() {
-        return {
+    // data() {
+    //     return {
 
-        }
-    },
+    //     }
+    // },
     methods: {
         emitRemove(mailId) {
             this.$emit('remove', mailId)
@@ -44,7 +44,7 @@ export default {
         mailPreview,
         mailDetail
     },
-    created() {
-        // console.log(this.mails)
-    },
+    // created() {
+    //     // console.log(this.mails)
+    // },
 }

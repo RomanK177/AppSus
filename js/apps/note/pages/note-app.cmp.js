@@ -12,7 +12,7 @@ export default {
     <app-header></app-header>
     <note-filter @doFilter="setFilter" />
      <note-add></note-add>
-    <note-list @remove="removeNote" :notes="notesToShow"/> 
+    <note-list :notes="notesToShow"/> 
     <!-- <noteImg :notes="notes" v-for="note in note.notes" :type="notes.type" @setVal="setNoteType" ></noteImg> -->
     </section>
     

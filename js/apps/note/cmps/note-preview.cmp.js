@@ -11,7 +11,7 @@ import noteVideo from './note-video.cmp.js'
 export default {
     props: ['note'],
     template: `
-        <section class="note-preview">
+        <section class="note-preview" >
             <component :is="note.type" :info="note.info" />
             <!-- NOTE ADD CMP -->
             <!-- <input type="text" v-model="noteData.val">
@@ -24,7 +24,8 @@ export default {
             noteData: {
                 val: '',
                 type: 'noteText'
-            }
+            },
+
         }
     },
     computed: {

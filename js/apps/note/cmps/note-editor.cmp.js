@@ -1,16 +1,14 @@
-
-
+import { noteService } from '../services/note-service.js'
 
 export default {
-name: 'note-editor',
-template: `
-<section class="note-editor">
-
-
-
-
-
-</section>
+    name: 'note-editor',
+    props: ['note'],
+    template: `
+    <section class="note-editor">
+        <input v-if="note"  type="color" v-model="note.bgC" @input="saveNote(note)" />
+        <button class="delete-btn" @click="emitRemove(note.id)">x</button>
+        <button @click="toggleePinned">Pin</button>
+    </section>
 
 
 
@@ -18,9 +16,24 @@ template: `
 
 
 `,
-methods: {
-    cloneNote(){
+
+
+    // data() {
         
+    // },
+    methods: {
+        emitRemove(noteId) {
+            // console.log('OK', noteId);
+            this.$emit('remove', noteId)
+        },
+        saveNote(note){
+            noteService.saveNote(note)
+            .then(note =>{
+                return this.note = note
+            })
+        },
+        togglePinned(){
+            !this.isPinned === this.isPinned
+        }
     }
-}
 }
