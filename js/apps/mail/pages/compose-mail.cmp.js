@@ -1,21 +1,27 @@
 import { mailService } from "../services/mail-service.js";
 import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
+import appHeader from '../../../cmps/app-header.cmp.js';
+import folderBar from '../cmps/folder-bar.cmp.js'
 
 export default {
 
     template: `
     <section class="compose-mail">
-        
-            <h2>New Message</h2>
-            <form @submit.prevent="sendMail" class="new-mail-form" >
-            
-             <input v-model="mailToSend.to" type="text" placeholder="To">
-             <br>
-             <input v-model="mailToSend.subject" type="text" placeholder="Subject">
-             <br>
-             <textarea v-model="mailToSend.body" name="new-mail-body" id="new-mail-body" cols="60" rows="25"></textarea>
-             <button>Send</button><button>&#128465</button>
-            </form>
+            <app-header></app-header>
+            <div class="container">
+              <h2>New Message</h2>
+              <form @submit.prevent="sendMail" class="new-mail-form" >
+               <input v-model="mailToSend.to" type="text" placeholder="To">
+               <br>
+               <input v-model="mailToSend.subject" type="text" placeholder="Subject">
+               <br>
+               <textarea v-model="mailToSend.body" name="new-mail-body" id="new-mail-body" cols="60" rows="25"></textarea>
+               <div class="compose-buttons flex">
+                 <button class="bsh">Send</button>
+                 <button>&#128465</button>
+               </div>
+              </form>
+            </div>
     </section>
     `,
     data() {
@@ -43,7 +49,11 @@ export default {
                     eventBus.$emit(EVENT_SHOW_MSG, msg)
 
                 })
-        }
-    },
+        },
 
+    },
+    components: {
+        appHeader,
+        folderBar,
+    }
 };

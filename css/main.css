@@ -28,7 +28,7 @@ body {
 .flex {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     /* width: 100%; */
 }
 
@@ -42,4 +42,25 @@ body {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.bar-list .mail-list {
+    align-self: baseline;
+}
+
+
+/* defult border shadow and hover  */
+
+.bsh {
+    list-style: none;
+    text-decoration: none;
+    color: lightskyblue;
+    border: lightslategrey 1px solid;
+    border-radius: 5px;
+}
+
+.bsh:hover {
+    color: rgb(162, 168, 173);
+    border: lightskyblue 1px solid;
+    box-shadow: 1px 1px 10px 1px;
 }
