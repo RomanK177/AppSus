@@ -1,49 +1,93 @@
 import { noteService } from '../services/note-service.js'
 
 export default {
-    props: ['note'],
-    template: `
-    <section v-if="note">
-    <div class="modal-backdrop">
-    <!-- <div v-for="currNote in notes" class="modal"> -->
-      <header class="modal-header">
-        <slot name="header">
-        {{note.noteTitle}}
-          <button type="button" class="btn-close" @click="close">x</button>
-        </slot>
-      </header>
-      <section class="modal-body">
-        <slot name="body">
-            {{note.info}}
-            {{note.style}}
-            {{note.createdAt}}
-         </slot>
-       </section>
-    </div>
-  </div>
-        <h1>
-            <pre>{{note}}</pre>
-        </h1>
+  props: ['note'],
+  template: `
+      <section>
+      <div class="modal-backdrop">
+        <div class="modal">
+          <header class="modal-header">
+            <slot name="header">
+              <button type="button" class="btn-close" @click="close">x</button>
+            </slot>
+          </header>
+          <section class="modal-body">
+            <slot name="body">
+            <input type="text" v-model="noteData.type" @onchange="editNote()">
+              <!-- <li v-for="(todo, idx) in note.info.todos">{{note.info.todo.txt}} {{new Date(note.info.todo.doneAt).toLocaleTimeString()}}</li> -->
+              <iframe width="200" height="200" :src="note.info.url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
+            </slot>
+          </section>
+        </div>
+      </div>
     </section>
+    <!-- <section>
+      <div class="modal-backdrop">
+        <div class="modal">
+          <header class="modal-header">
+            <slot name="header">
+              <button type="button" class="btn-close" @click="close">x</button>
+            </slot>
+          </header>
+          <section class="modal-body">
+            <slot name="body">
+            {{note.info.title}}
+              {{note.info.txt}}
+              <li v-for="(todo, idx) in note.info.todos">{{note.info.todo.txt}} {{new Date(note.info.todo.doneAt).toLocaleTimeString()}}</li>
+              <iframe width="200" height="200" :src="note.info.url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
+            </slot>
+          </section>
+        </div>
+      </div>
+    </section> -->
+
+
     `,
-    methods: {
-        close() {
-          this.$emit('close');
-        }
+  data() {
+    return {
+      noteToEdit: noteService.getEmptyNote(),
+      noteData: {
+        val: '',
+        type: 'noteText'
+      },
+
+    }
+  },
+  methods: {
+    close() {
+      this.$emit('close');
     },
-    // data() {
-    //     return {
-    //         note : null
-    //     }
-    // },
 
-    // createdAt(){
-    //   const id = this.$route.params.noteId;
-    //   carService.getById(id)
-    //       .then(note => this.note = note)
+    saveNote() {
+      noteService.save(this.noteToEdit)
+        .then(() => {
+          const msg = {
+            txt: 'Note Saved Successffully',
+            type: 'success'
+          }
+          eventBus.$emit(EVENT_SHOW_MSG, msg)
+        })
+        .catch(err => {
+          console.log('ERR:', err);
+          const msg = {
+            txt: 'Couldnt save your note',
+            type: 'danger'
+          }
+          eventBus.$emit(EVENT_SHOW_MSG, msg)
 
-    // }
+        })
+    },
+   editNote(){
+     noteService.editNote(this.noteData)
+
+   }
+
+   
+
+  },
+
 
 }
 
-// return { id: '', type: '', info: {}, style: {}, isPinned: false, createdAt: null }

@@ -12,7 +12,9 @@ export const noteService = {
     removeNote,
     saveNote,
     getEmptyNote,
-    addNote
+    addNote,
+    cloneNote,
+    editNote
 }
 
 function getById(id) {
@@ -47,6 +49,15 @@ function saveNote(note) {
         // return Promise.reject('Big Badabum');
 }
 
+function cloneNote (note) {
+    let newNote = _createNote(note.type, note.info)
+    gNotes.unshift(newNote)
+
+
+}
+
+
+
 function getEmptyNote() {
     return { id: '', type: '', info: {}, style: {}, isPinned: false, createdAt: null }
 }
@@ -75,8 +86,41 @@ function _createNote(type, info) {
 }
 
 
+function editNote(noteData){
+    let infoObject = {}
+    console.log(noteData)
+    switch (noteData.type) {
+        case 'noteText':
+            infoObject = {
+                txt: noteData.val
+            }
+            break;
+        case 'noteImg':
+            infoObject = {
+                url: noteData.val
+            }
+            break;
+        case 'noteTodos':
+            let todoList = noteData.val
+            let strs = todoList.split(',')
+            let strTodos = strs.map(str => {
+                return {txt: str, doneAt: Date.now()}
+            })
+            infoObject = {
+                label: '',
+                todos: strTodos
+                
+            }
+            break;
+        case 'noteVideo':
+            infoObject = {
+                url: convertVidUrl(noteData.val)
+            }
+            break;
 
-
+    }
+    utilService.storeToStorage(STORAGE_KEY, gNotes)
+}
 
 function addNote(noteData) {
     let infoObject = {}
@@ -112,6 +156,8 @@ function addNote(noteData) {
 
     }
     gNotes.push(_createNote(noteData.type, infoObject))
+    utilService.storeToStorage(STORAGE_KEY, gNotes)
+
 
 }
 
