@@ -11,10 +11,11 @@ export default {
               <div v-for="currMail in mails" :key="currMail.id" >
                 <li >
                    <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->
+                   <button :class="{star: currMail.isStar}" @click="emitIsStarChange(currMail.id)">&#9733</button>
                    <mail-preview :mail="currMail" @click.native="mailClicked(),mailClicked(currMail.id)" />
                    <div class="prev-buttons">
                     <button @click="emitRemove(currMail.id)">&#128465</button>
-                    <button @click="emitIsReadChange(currMail.id)">R</button>
+                    <button :class="{unread: !currMail.isRead}" @click="emitIsReadChange(currMail.id)">R</button>
                    </div>
                 </li>
                 <mail-detail :mail="currMail" class="mail-detail"> </mail-detail>
@@ -33,6 +34,9 @@ export default {
         },
         emitIsReadChange(mailId) {
             this.$emit('readChange', mailId)
+        },
+        emitIsStarChange(mailId) {
+            this.$emit('starChange', mailId)
         },
         mailClicked(mailId) {
             console.log('mail clicked')

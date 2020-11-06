@@ -3,6 +3,7 @@ import appHeader from '../../../cmps/app-header.cmp.js'
 import mailList from '../cmps/mail-list.cmp.js'
 import mailFilter from '../cmps/mail-filter.cmp.js'
 import folderBar from '../cmps/folder-bar.cmp.js'
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
 
 export default {
     template: ` 
@@ -12,14 +13,15 @@ export default {
       <mail-filter @doFilter="setFilter"></mail-filter>
       <p v-if="mails">Unread mails: {{unReadCount}}</p>
         <div class="flex">
-            <folder-bar></folder-bar>
-         <mail-list v-if="mails" :mails="mailsToShow" @remove="removeMail" @readChange="changeRead" @clickedChange="changeClicked" ></mail-list>
+            <folder-bar :currFolder="currFolder" @doFolder="setFolder" class="flex-column"></folder-bar>
+         <mail-list v-if="mails" :mails="folderedMails" @remove="removeMail" @readChange="changeRead" @starChange="changeStar" @clickedChange="changeClicked" ></mail-list>
         </div>
     </section>
     `,
     data() {
         return {
             filterBy: undefined,
+            currFolder: 'inbox',
             mails: null,
         }
     },
@@ -39,12 +41,22 @@ export default {
                     (mail.from.toLowerCase().includes(txt)) ||
                     (mail.body.toLowerCase().includes(txt)))
             })
-            return mails.filter(mail => {
+            return filteredMails = mails.filter(mail => {
                 // if (this.filterBy.isRead === 'true') return mail.isRead;
                 // if (this.filterBy.isRead === 'false') return !mail.isRead;
                 if (isRead === 'true') return mail.isRead;
                 if (isRead === 'false') return !mail.isRead;
                 else return mail;
+            })
+
+
+        },
+        folderedMails() {
+            let mails = this.mailsToShow
+            return mails.filter(mail => {
+                if (this.currFolder === "inbox") return !mail.isSent;
+                if (this.currFolder === "sent") return mail.isSent;
+                if (this.currFolder === "star") return mail.isStar;
             })
         },
         unReadCount() {
@@ -68,6 +80,11 @@ export default {
                 .then(() => eventBus.$emit('show-msg', 'Mail Read Updated'))
                 .catch(err => console.log('something went wrong', err))
         },
+        changeStar(mailId) {
+            mailService.changeStar(mailId)
+                .then(() => eventBus.$emit('show-msg', 'Mail Star Updated'))
+                .catch(err => console.log('something went wrong', err))
+        },
         changeClicked(mailId) {
             mailService.changeClicked(mailId)
                 .then(() => eventBus.$emit('show-msg', 'Mail Clicked Updated'))
@@ -75,6 +92,11 @@ export default {
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
+        },
+        setFolder(folderIs) {
+            console.log("setFolder -> folderIs", folderIs)
+
+            this.currFolder = folderIs
         }
     },
     created() {
