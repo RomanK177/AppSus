@@ -15,7 +15,6 @@
 
 .mail-preview .prev-buttons {
     width: 10%;
-    /* flex-grow: 1; */
     display: flex;
     flex-flow: row nowrap;
 }
@@ -25,10 +24,11 @@
     text-align: left;
 }
 
-.mail-preview .sent-at {
-    align-self: flex-end;
+.mail-preview .body {
+    color: rgb(161, 159, 159)
 }
 
-.mail-preview .sent-at {
-    right: 0px;
-}
+
+/* .mail-preview .sent-at {
+    align-self: flex-end;
+} */

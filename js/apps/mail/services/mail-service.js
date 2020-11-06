@@ -9,7 +9,7 @@ export const mailService = {
     getById,
     getMails,
     removeMail,
-    saveMail,
+    sendMail,
     getEmptyMail,
     changeRead,
     changeClicked,
@@ -45,22 +45,28 @@ function changeClicked(mailId) {
     return Promise.resolve()
 }
 
+<<<<<<< HEAD
 
 
 function saveMail(mail) {
+=======
+function sendMail(mail) {
+>>>>>>> 4d5907c115bf4277cee5eed473c8580569e699c6
     if (mail.id) {
         const mailIdx = gMail.findIndex(currMail => mail.id === currMail.id)
         gMails.splice(mailIdx, 1, mail)
+        utilService.storeToStorage(STORAGE_KEY, gMails)
     } else {
         mail.id = utilService.makeId();
         gMails.unshift(mail);
+        utilService.storeToStorage(STORAGE_KEY, gMails)
     }
     return Promise.resolve(mail)
         // return Promise.reject('Big Badabum');
 }
 
 function getEmptyMail() {
-    return { id: '', subject: '', body: '', isRead: false, sentAt: null }
+    return { id: '', subject: '', body: '', from: '', to: '', isSent: true, isClicked: false, isRead: false, sentAt: null }
 }
 
 function _createMails() {

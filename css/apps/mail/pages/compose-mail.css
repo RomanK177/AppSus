@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+.compose-mail {
+    width: 100%;
+    padding: 20px;
+}
+
+.new-mail-form * {
+    width: 80%;
+}

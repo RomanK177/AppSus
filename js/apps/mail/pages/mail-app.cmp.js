@@ -2,16 +2,20 @@ import { mailService } from "../services/mail-service.js";
 import appHeader from '../../../cmps/app-header.cmp.js'
 import mailList from '../cmps/mail-list.cmp.js'
 import mailFilter from '../cmps/mail-filter.cmp.js'
+import folderBar from '../cmps/folder-bar.cmp.js'
 
 export default {
     template: ` 
-     <section class="mail-app">
+    <section class="mail-app">
      <app-header></app-header>
       <!-- <p> Mail App</p> -->
       <mail-filter @doFilter="setFilter"></mail-filter>
       <p v-if="mails">Unread mails: {{unReadCount}}</p>
-      <mail-list v-if="mails" :mails="mailsToShow" @remove="removeMail" @readChange="changeRead" @clickedChange="changeClicked" ></mail-list>
-      </section>
+        <div class="flex">
+            <folder-bar></folder-bar>
+         <mail-list v-if="mails" :mails="mailsToShow" @remove="removeMail" @readChange="changeRead" @clickedChange="changeClicked" ></mail-list>
+        </div>
+    </section>
     `,
     data() {
         return {
@@ -23,6 +27,7 @@ export default {
         appHeader,
         mailList,
         mailFilter,
+        folderBar,
     },
     computed: {
         mailsToShow() {

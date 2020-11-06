@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.mail-list {
+    flex-grow: 5;
+}
+
 .mail-list ul {
     padding: 0;
 }
