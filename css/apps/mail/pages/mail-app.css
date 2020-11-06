@@ -14,6 +14,6 @@
     margin: 0 auto;
     height: 30px;
     padding: 4px 5px 4px 5px;
-    ;
-    border: lightskyblue 1px solid
+    align-self: center;
+    border: lightskyblue 1px solid;
 }

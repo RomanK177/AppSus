@@ -1,5 +1,5 @@
 import { mailService } from "../services/mail-service.js";
-import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
 
 export default {
 
@@ -8,7 +8,6 @@ export default {
         
             <h2>New Message</h2>
             <form @submit.prevent="sendMail" class="new-mail-form" >
-                div.form
             
              <input v-model="mailToSend.to" type="text" placeholder="To">
              <br>

@@ -42,7 +42,7 @@ export default {
                     (mail.from.toLowerCase().includes(txt)) ||
                     (mail.body.toLowerCase().includes(txt)))
             })
-            return filteredMails = mails.filter(mail => {
+            return mails.filter(mail => {
                 // if (this.filterBy.isRead === 'true') return mail.isRead;
                 // if (this.filterBy.isRead === 'false') return !mail.isRead;
                 if (isRead === 'true') return mail.isRead;
