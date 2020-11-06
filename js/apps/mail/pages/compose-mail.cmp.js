@@ -1,4 +1,5 @@
 import { mailService } from "../services/mail-service.js";
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
 
 export default {
 

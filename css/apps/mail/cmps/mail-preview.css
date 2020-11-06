@@ -13,12 +13,6 @@
     text-align: left;
 }
 
-.mail-preview .prev-buttons {
-    width: 10%;
-    display: flex;
-    flex-flow: row nowrap;
-}
-
 .mail-preview .sent-from {
     flex-grow: 1;
     text-align: left;

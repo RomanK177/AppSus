@@ -1,8 +1,10 @@
 .mail-folder-bar {
     color: lightslategray;
     font-size: smaller;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     text-align: center;
+    padding: 10px;
+    /* width: 25%; */
 }
 
 .compose-btn {
@@ -10,9 +12,20 @@
     height: 5vh;
     border-radius: 25px;
     font-size: x-large;
+    background-color: rgb(255, 255, 255);
 }
 
 .compose-btn a {
     text-decoration: none;
     color: rgb(119, 119, 119);
 }
+
+.currFolder {
+    background-color: rgba(253, 207, 120, 0.486);
+    font-weight: bolder;
+}
+
+
+/* .folders {
+    width: 25%;
+} */

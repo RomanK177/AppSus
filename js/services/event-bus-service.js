@@ -1,5 +1,5 @@
 export const EVENT_SHOW_MSG = 'show-msg';
-export const EVENT_PUK = 'puk';
+// export const EVENT_PUK = 'puk';
 
 export const eventBus = new Vue()
 
