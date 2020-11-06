@@ -6,7 +6,7 @@ import folderBar from '../cmps/folder-bar.cmp.js'
 
 export default {
     template: ` 
-     <section class="mail-app">
+    <section class="mail-app">
      <app-header></app-header>
       <!-- <p> Mail App</p> -->
       <mail-filter @doFilter="setFilter"></mail-filter>

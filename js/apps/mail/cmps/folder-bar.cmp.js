@@ -4,7 +4,8 @@ export default {
     template: `
 <section class="mail-folder-bar">
    <button class="compose-btn" @click="emitCompose"><router-link class="compose-link" to="/mail/compose" exact>+Compose</router-link></button>
-
+  <button>Inbox</button> 
+  <button>Sent</button> 
 
 <!-- <input type="text" v-model="filterBy.bySubject" placeholder="Search mail" @input="emitFilter" />
  <select v-model="filterBy.isRead" @change="emitFilter" name="filter-by" id="filter-by">
