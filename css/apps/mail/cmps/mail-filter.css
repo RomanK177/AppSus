@@ -10,19 +10,24 @@
 }
 
 .mail-filter input {
-    height: 30px;
-    width: 400px;
+    /* height: 30px; */
+    width: 300px;
+    padding: 5px;
     text-align: center;
-    border-radius: 10px;
-    margin: 0 auto;
+    border-radius: 5px;
+    /* margin: 0 auto; */
     border: lightskyblue 1px solid
 }
 
 .mail-filter select {
-    height: 30px;
+    /* height: 30px;
     width: 60px;
     text-align: center;
     border-radius: 10px;
     margin: 0 auto;
-    border: lightskyblue 1px solid
+    border: lightskyblue 1px solid */
+    text-align: center;
+    border-radius: 5px;
+    border: lightskyblue 1px solid;
+    padding: 4px;
 }

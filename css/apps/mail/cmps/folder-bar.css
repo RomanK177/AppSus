@@ -8,11 +8,12 @@
 }
 
 .compose-btn {
-    width: 15vh;
-    height: 5vh;
+    /* width: 15vh;
+    height: 5vh; */
+    padding: 5px;
     border-radius: 25px;
     font-size: x-large;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 }
 
 .compose-btn a {
