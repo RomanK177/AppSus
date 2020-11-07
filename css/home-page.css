@@ -5,6 +5,7 @@
 
 .homepage{
     background: url(../assets/imgs/snap2.jpeg) no-repeat center / cover fixed;
+    color: white;
      /* background-repeat: no-repeat;  */
     /* background-size: 100%; */
     /* object-fit: contain;  */
@@ -16,13 +17,29 @@
   
 }
 
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(252, 252, 249, 0.445);
+
+}
+
 .homepage-txt{
 text-align: center;
-padding: 80px;
+padding: 60px;
 }
 
 .homepage-txt h1{
-    font-size: 80px
+    font-size: 70px;
+    padding: 40px;
+    margin: 0;
+}
+
+.homepage-txt p{
+    text-align: center;
+    font-size: 20px;
+    /* padding: 60px; */
 }
 
 .mail-icon{
@@ -33,3 +50,5 @@ padding: 80px;
     border: 1px solid blue;
     border-radius: 10px;
 }
+
+

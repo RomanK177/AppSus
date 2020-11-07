@@ -10,22 +10,12 @@ export default {
           <input v-if="note.type === 'noteTxt'" v-model="note.info.txt">
           <button type="button" class="btn-close" @click="close">x</button>
             <slot name="body">
-<<<<<<< HEAD
-            <input v-model="note.type">
-              <!-- <li v-for="(todo, idx) in note.info.todos">{{note.info.todo.txt}} {{new Date(note.info.todo.doneAt).toLocaleTimeString()}}</li> -->
-              <!-- <iframe width="200" height="200" :src="note.info.url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-              
-=======
             <input type="text" v-model="note.info.txt" @input="saveNote(note)">
->>>>>>> fa6a470bd3bfe63bc29fdc347da8c1a9273de881
             </slot>
           </section>
         </div>
       </div>
     </section>
-<<<<<<< HEAD
-  
-=======
 
     <section v-else-if="note.type==='noteImg'">
       <div class="modal-backdrop">
@@ -67,7 +57,6 @@ export default {
         </div>
       </div>
     </section>
->>>>>>> fa6a470bd3bfe63bc29fdc347da8c1a9273de881
 
     <section v-else-if="note.type==='noteTodos'">
       <div class="modal-backdrop">
@@ -114,20 +103,9 @@ export default {
         editNote() {
             noteService.editNote(this.noteData)
 
-<<<<<<< HEAD
-        })
-    },
-   editNote(){
-     noteService.editNote(this.noteData)
-
-   }
- 
-  }
-=======
         }
 
 
->>>>>>> fa6a470bd3bfe63bc29fdc347da8c1a9273de881
 
     },
 

@@ -23,6 +23,38 @@ body {
     margin: 0;
 }
 
+html { 
+    font-family: questrial, sans-serif;
+
+}
+
+body {
+    margin: 0;
+}
+
+/* button {
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0.5rem;
+    outline: none;
+}
+
+input, select {
+    padding: 0.5rem;
+    outline: none;
+} */
+
+
+
+/* font family */
+
+@font-face {
+
+    font-family: questrial;
+    src: url(../assets/fonts/Questrial/Questrial-Regular.ttf);
+
+}
 
 /* Helpers------ */
 
@@ -64,4 +96,76 @@ body {
     color: rgb(162, 168, 173);
     border: lightskyblue 1px solid;
     box-shadow: 1px 1px 10px 1px;
+}
+
+
+@media (max-width: 680px){
+
+    .btn-menu-mobile {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    }
+
+    .menubtn-img{
+    height: 30px;
+    width: 30px;
+    margin-right: 80px;
+    cursor: pointer;
+
+    }
+
+
+    
+    /* .menubtn-img{
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        margin-right: 40px;
+    
+    
+    } */
+
+    .main-nav {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 60px;
+        transform: translateX(100%);
+        transition: .3s;
+        transition-timing-function: ease-in-out;
+    }
+    .show {
+        display: flex;
+        transition: .3s;
+        transition-timing-function: ease-in-out;
+    }
+
+    ul.main-nav.show{
+        padding: 0;
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .main-nav a {
+        width: 163px;
+        height: 50px;
+        color: white;
+        /* margin: 20px; */
+    }
+
+    .main-nav li a:hover{
+        background-color: white;
+        color: #33be6d;
+        border-radius: 0;
+        padding: 0;
+      
+      }
+
+
+      
+
+
 }

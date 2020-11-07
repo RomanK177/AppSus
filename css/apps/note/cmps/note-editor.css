@@ -11,3 +11,12 @@
 .pinned .pin-btn {
 background-color: palegreen;
 }
+
+.trash, .pin, .copy, .edit{
+height: 15px;
+width: 15px;
+}
+
+.note-editor{
+    padding: 10px;
+}
