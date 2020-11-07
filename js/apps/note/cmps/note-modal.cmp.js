@@ -25,7 +25,7 @@ export default {
         <div class="modal">
           <header class="modal-header">
             <slot name="header">
-              <button type="button" class="btn-close" @input="saveNote(note)">x</button>
+              <button type="button" class="btn-close" @click="close">x</button>
             </slot>
           </header>
           <section class="modal-body">
@@ -72,9 +72,10 @@ export default {
           <section class="modal-body">
             <slot name="body">
             <input type="text" v-model="note.info.label" @input="saveNote(note)">
-              <div v-for="(todo, index) in note.info.todos" :key="index">
+              <div id="modalTodos" v-for="(todo, index) in note.info.todos" :key="index">
                  <input type="text" v-model="todo.txt" @input="saveNote(note)">
               </div>
+              <button @click="addToDo">+</button>
             </slot>
           </section>
         </div>
@@ -106,8 +107,10 @@ export default {
         editNote() {
             noteService.editNote(this.noteData)
 
+        },
+        addToDo() {
+            this.note.info.todos.push({ txt: '', doneAt: new Date() })
         }
-
 
 
     },

@@ -51,7 +51,9 @@ function saveNote(note) {
 }
 
 function cloneNote(note) {
-    let newNote = _createNote(note.type, note.info)
+    let newInfoJson = JSON.stringify(note.info);
+    let newInfoObj = JSON.parse(newInfoJson)
+    let newNote = _createNote(note.type, newInfoObj)
     gNotes.unshift(newNote)
 
 
@@ -125,7 +127,6 @@ function editNote(noteData) {
 
 function addNote(noteData) {
     let infoObject = {}
-    console.log(noteData)
     switch (noteData.type) {
         case 'noteText':
             infoObject = {
