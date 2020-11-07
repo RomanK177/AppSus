@@ -9,7 +9,7 @@
 }
 
 .pinned .pin-btn {
-background-color: palegreen;
+background-color: lightpink;
 }
 
 .trash, .pin, .copy, .edit{
@@ -19,4 +19,19 @@ width: 15px;
 
 .note-editor{
     padding: 10px;
+}
+
+.note-editor button{
+    background-color: inherit;
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.create-color {
+    cursor: pointer;
+}
+
+.note-editor button:hover{
+background-color: lightskyblue
 }
