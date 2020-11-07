@@ -19,7 +19,12 @@ export default {
     <a href="/"> 
             <h1 class="logo">sn<span>app</span></h1>
         </a>
-        <ul class="main-nav" v-if="isShown" v-class="{shown: isShown}">
+        <ul class="main-nav"  >
+            <li><router-link class="home-nav" to="/" exact>Home</router-link></li>
+            <li><router-link class="notes-nav" to="/notes" exact>Notes App</router-link></li>
+            <li><router-link class="mail-nav" to="/mail" exact>Mail App</router-link></li>
+        </ul>
+        <ul class="mobile-nav" v-if="isShown" >
             <li><router-link class="home-nav" to="/" exact>Home</router-link></li>
             <li><router-link class="notes-nav" to="/notes" exact>Notes App</router-link></li>
             <li><router-link class="mail-nav" to="/mail" exact>Mail App</router-link></li>
@@ -45,17 +50,18 @@ export default {
     `,
     data() {
         return {
-            isShown: false
+            isShown: false,
         }
     },
     methods: {
         showMenu() {
             document.querySelector('.main-nav').classList.toggle('show');
         },
-        toggleShowMenu(){
+        toggleShowMenu() {
             this.isShown = !this.isShown
-        }
-    },
-   
-}
+        },
 
+
+    },
+
+}

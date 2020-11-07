@@ -4,7 +4,10 @@ export default {
     props: ['currFolder'],
     template: `
 <section class="mail-folder-bar">
-   <button class="compose-btn" ><router-link class="compose-link" to="/mail/compose" exact>+Compose</router-link></button>
+   <button class="compose-btn" ><router-link class="compose-link" to="/mail/compose" exact>
+   <img class="plus-img"src="../assets/imgs/plus.svg">
+   Compose
+</router-link></button>
    <div class="folders"></div>
     <button :class="{currFolder: currFolder==='inbox'}" @click="emitInboxFilter">Inbox</button> 
     <button :class="{currFolder: currFolder==='sent'}" @click="emitSentFilter">Sent</button> 

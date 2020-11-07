@@ -24,15 +24,14 @@ body {
     padding: 0;
 }
 
-html { 
+html {
     font-family: questrial, sans-serif;
-    height: 100vh;
-
 }
 
 /* body {
     margin: 0;
 } */
+
 
 /* button {
     border: 1px solid #bbb;
@@ -48,15 +47,13 @@ input, select {
 } */
 
 
-
 /* font family */
 
 @font-face {
-
     font-family: questrial;
     src: url(../assets/fonts/Questrial/Questrial-Regular.ttf);
-
 }
+
 
 /* Helpers------ */
 
@@ -100,23 +97,19 @@ input, select {
     box-shadow: 1px 1px 10px 1px;
 }
 
-
-@media (max-width: 680px){
-
+@media (max-width: 680px) {
     .btn-menu-mobile {
-    display: flex;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
+        display: flex;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
     }
-
-    .menubtn-img{
-    height: 30px;
-    width: 30px;
-    margin-right: 80px;
-    cursor: pointer;
-
+    .menubtn-img {
+        height: 30px;
+        width: 30px;
+        margin-right: 80px;
+        cursor: pointer;
     }
 
     
@@ -131,8 +124,11 @@ input, select {
     
     
     } */
-
     .main-nav {
+        display: none;
+    }
+    .mobile-nav {
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 50px;
@@ -140,29 +136,38 @@ input, select {
         transform: translateX(100%);
         transition: .3s;
         transition-timing-function: ease-in-out;
+        width: 100px;
+        /* height: 100px; */
+        background-color: white;
+        border: 1px solid grey;
+        text-align: center
     }
+
     .show {
         display: flex;
         transition: .3s;
         transition-timing-function: ease-in-out;
     }
-
-    ul.main-nav.show{
+    ul.mobile-nav {
         padding: 0;
         height: 60px;
         margin-top: 10px;
     }
-
-    .main-nav a {
-        width: 163px;
-        height: 50px;
-        color: white;
-        /* margin: 20px; */
+    .mobile-nav a {
+        color: lightskyblue;
+        border: none;
+        font-size: 20px;
+        
     }
 
-    .main-nav li a:hover{
-        background-color: white;
-        color: #33be6d;
+
+    /* .mobile-nav li{
+        width: 40px;
+        color: lightskyblue;
+    } */
+    .mobile-nav li a:hover {
+        background-color: rgb(162, 168, 173);
+        color: white;
         border-radius: 0;
         padding: 0;
       
@@ -175,4 +180,5 @@ input, select {
       
 
 
+    
 }
