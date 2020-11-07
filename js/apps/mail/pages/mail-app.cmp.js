@@ -7,7 +7,7 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 
 export default {
     template: ` 
-    <section class="mail-app container flex-column">
+    <section class="mail-app flex-column">
         <app-header></app-header>
         <!-- <div> -->
         <div class="filter-counter flex">
