@@ -37,6 +37,7 @@
 
 .unread {
     font-weight: bolder;
+    font-style: italic;
 }
 
 .star {
