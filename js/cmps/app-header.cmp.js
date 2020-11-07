@@ -16,9 +16,9 @@ export default {
         </div>     
     </header> --> 
     <header class="app-container">
-    <a href="/"> 
+        <router-link to="/">
             <h1 class="logo">sn<span>app</span></h1>
-        </a>
+            </router-link>
         <ul class="main-nav"  >
             <li><router-link class="home-nav" to="/" exact>Home</router-link></li>
             <li><router-link class="notes-nav" to="/notes" exact>Notes App</router-link></li>

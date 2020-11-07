@@ -22,7 +22,7 @@ li{
     grid-gap: 1.8rem;
     /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: 250px; */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
     grid-template-rows: max-content(250px);
     margin: 0 auto;
     padding: 0;

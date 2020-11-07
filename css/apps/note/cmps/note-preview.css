@@ -4,7 +4,7 @@
 
 .note-preview{ 
      height: 10;
-     line-break: anywhere;
+     /* line-break: anywhere; */
      padding: 10px;
 }
 /* .note-preview{
