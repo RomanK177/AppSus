@@ -5,8 +5,43 @@
 .compose-mail {
     width: 100%;
     padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compose-mail h2 {
+    background-color: rgb(194, 190, 190);
+    ;
+    margin: 0;
 }
 
 .new-mail-form * {
-    width: 80%;
+    width: 100%;
+}
+
+.new-mail-form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compose-buttons {
+    justify-content: space-between;
+}
+
+
+/* .compose-buttons :first-child {
+    background-color: lightskyblue;
+    border-radius: 5px;
+} */
+
+.compose-buttons :last-child {
+    background-color: lightgray;
+    border-radius: 5px;
+    font-size: xx-large;
+}
+
+.compose-buttons button {
+    width: 70px;
+    height: 50px;
 }

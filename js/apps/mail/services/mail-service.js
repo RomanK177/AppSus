@@ -53,8 +53,6 @@ function changeClicked(mailId) {
     return Promise.resolve()
 }
 
-
-
 function sendMail(mail) {
     if (mail.id) {
         const mailIdx = gMail.findIndex(currMail => mail.id === currMail.id)

@@ -7,16 +7,18 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 
 export default {
     template: ` 
-    <section class="mail-app container">
+    <section class="mail-app container flex-column">
         <app-header></app-header>
+        <!-- <div> -->
         <div class="filter-counter flex">
             <mail-filter @doFilter="setFilter"></mail-filter>
             <div class="unread-count" v-if="mails">Unread mails: {{unReadCount}}</div>
         </div>
-        <div class="flex">
-            <folder-bar :currFolder="currFolder" @doFolder="setFolder" class="flex-column"></folder-bar>
-         <mail-list v-if="mails" :mails="folderedMails" @remove="removeMail" @readChange="changeRead" @starChange="changeStar" @clickedChange="changeClicked" ></mail-list>
+        <div class="bar-list flex">
+           <folder-bar :currFolder="currFolder" @doFolder="setFolder" class="flex-column"></folder-bar>
+           <mail-list v-if="mails" :mails="folderedMails" @remove="removeMail" @readChange="changeRead" @starChange="changeStar" @clickedChange="changeClicked" ></mail-list>
         </div>
+        <!-- </div> -->
     </section>
     `,
     data() {
@@ -42,7 +44,7 @@ export default {
                     (mail.from.toLowerCase().includes(txt)) ||
                     (mail.body.toLowerCase().includes(txt)))
             })
-            return filteredMails = mails.filter(mail => {
+            return mails.filter(mail => {
                 // if (this.filterBy.isRead === 'true') return mail.isRead;
                 // if (this.filterBy.isRead === 'false') return !mail.isRead;
                 if (isRead === 'true') return mail.isRead;
