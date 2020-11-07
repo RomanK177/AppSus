@@ -11,7 +11,10 @@
 }
 
 .sent-from {
-    min-width: 15%;
+    min-width: 18%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
@@ -31,6 +34,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: wrap;
+    flex-shrink: 4;
 }
 
 .mail-preview .sent-at {
@@ -39,13 +43,16 @@
 
 @media (max-width: 1090px) {
     .mail-preview .body {
-        width: 60%;
+        width: 50%;
     }
 }
 
 @media (max-width:860px) {
     .mail-preview .body {
         display: none;
+    }
+    .sent-from {
+        min-width: 30%;
     }
 }
 
@@ -54,7 +61,7 @@
         display: none;
     }
     .sent-from {
-        min-width: 30%;
+        min-width: 40%;
     }
 }
 

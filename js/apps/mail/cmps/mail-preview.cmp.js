@@ -20,7 +20,7 @@ export default {
             return { unread: !this.mail.isRead }
         },
         previewBody() {
-            return this.mail.body.slice(0, 45) + '...'
+            return this.mail.body.slice(0, 30) + '...'
         }
     },
 }
