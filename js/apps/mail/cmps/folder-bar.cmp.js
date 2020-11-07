@@ -11,12 +11,6 @@ export default {
     <button :class="{currFolder: currFolder==='star'}" @click="emitStarFilter">Starred</button> 
   </div>
 
-<!-- <input type="text" v-model="filterBy.bySubject" placeholder="Search mail" @input="emitFilter" />
- <select v-model="filterBy.isRead" @change="emitFilter" name="filter-by" id="filter-by">
-  <option value="null">All</option>
-  <option value="true">Read</option>
-  <option value="false">Unread</option> -->
- </select>
 </section>
 `,
     data() {

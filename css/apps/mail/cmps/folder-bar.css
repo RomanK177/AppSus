@@ -1,23 +1,17 @@
 .mail-folder-bar {
     color: lightslategray;
     font-size: smaller;
-    /* flex-grow: 1; */
     text-align: center;
-    padding: 0 10px 10px 10px 10px;
-    /* width: 25%; */
+    /* padding: 0 10px 10px 10px 10px; */
 }
 
 .compose-btn {
-    /* width: 15vh;
-    height: 5vh; */
     padding: 5px;
-    border-radius: 25px;
-    font-size: x-large;
-    /* background-color: rgb(255, 255, 255); */
+    border-radius: 10px;
+    font-size: large;
 }
 
 .compose-btn:hover {
-    /* border: lightskyblue 1px solid; */
     box-shadow: 1px 1px 10px 1px;
 }
 
@@ -27,11 +21,15 @@
 }
 
 .currFolder {
-    background-color: rgba(253, 207, 120, 0.486);
+    background-color: lightskyblue;
     font-weight: bolder;
 }
 
+.folders * {
+    padding: 25px;
+}
 
-/* .folders {
-    width: 25%;
+
+/* button {
+    padding: 25px;
 } */

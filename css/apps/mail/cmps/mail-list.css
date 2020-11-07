@@ -16,7 +16,7 @@
     flex-flow: rows nowrap;
     justify-content: space-between;
     border: lightgray 1px solid;
-    background-color: rgba(197, 233, 255, 0.719);
+    background-color: rgba(238, 239, 240, 0.719);
 }
 
 .mail-list ul li:hover {
@@ -34,5 +34,5 @@
 }
 
 .star {
-    background-color: rgba(255, 183, 50, 0.822);
+    background-color: rgba(135, 206, 250, 0.596);
 }
