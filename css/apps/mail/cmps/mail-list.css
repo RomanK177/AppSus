@@ -11,12 +11,17 @@
     margin: 0;
 }
 
+.mail-list button {
+    font-size: 20px;
+}
+
 .mail-list ul li {
     display: flex;
     flex-flow: rows nowrap;
     justify-content: space-between;
     border: lightgray 1px solid;
-    background-color: white
+    background-color: white;
+    padding: 5px;
 }
 
 .mail-list ul li:hover {
