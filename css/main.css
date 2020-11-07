@@ -21,16 +21,18 @@
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 html { 
     font-family: questrial, sans-serif;
+    height: 100vh;
 
 }
 
-body {
+/* body {
     margin: 0;
-}
+} */
 
 /* button {
     border: 1px solid #bbb;
@@ -117,6 +119,8 @@ input, select {
 
     }
 
+    
+
 
     
     /* .menubtn-img{
@@ -162,6 +166,9 @@ input, select {
         border-radius: 0;
         padding: 0;
       
+      }
+      header .app-container{
+          width:100%
       }
 
 
