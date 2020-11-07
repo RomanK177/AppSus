@@ -14,7 +14,8 @@ export const noteService = {
     getEmptyNote,
     addNote,
     cloneNote,
-    editNote
+    editNote,
+    convertVidUrl
 }
 
 function getById(id) {
@@ -40,7 +41,7 @@ function saveNote(note) {
     if (note.id) {
         const noteIdx = gNotes.findIndex(currNote => note.id === currNote.id)
         gNotes.splice(noteIdx, 1, note)
-    } else { 
+    } else {
         note.id = utilService.makeId();
         gNotes.unshift(note);
     }
@@ -49,7 +50,7 @@ function saveNote(note) {
         // return Promise.reject('Big Badabum');
 }
 
-function cloneNote (note) {
+function cloneNote(note) {
     let newNote = _createNote(note.type, note.info)
     gNotes.unshift(newNote)
 
@@ -86,7 +87,7 @@ function _createNote(type, info) {
 }
 
 
-function editNote(noteData){
+function editNote(noteData) {
     let infoObject = {}
     console.log(noteData)
     switch (noteData.type) {
@@ -104,12 +105,12 @@ function editNote(noteData){
             let todoList = noteData.val
             let strs = todoList.split(',')
             let strTodos = strs.map(str => {
-                return {txt: str, doneAt: Date.now()}
+                return { txt: str, doneAt: Date.now() }
             })
             infoObject = {
                 label: '',
                 todos: strTodos
-                
+
             }
             break;
         case 'noteVideo':
@@ -140,12 +141,12 @@ function addNote(noteData) {
             let todoList = noteData.val
             let strs = todoList.split(',')
             let strTodos = strs.map(str => {
-                return {txt: str, doneAt: Date.now()}
+                return { txt: str, doneAt: Date.now() }
             })
             infoObject = {
                 label: '',
                 todos: strTodos
-                
+
             }
             break;
         case 'noteVideo':
@@ -161,8 +162,8 @@ function addNote(noteData) {
 
 }
 
-function convertVidUrl(url){
-// url = "https://youtube.com/watch?v=TESTURLNOTTOBEUSED"
-let convertedUrl = url.replace("watch?v=", "embed/")
-return convertedUrl
+function convertVidUrl(url) {
+    // url = "https://youtube.com/watch?v=TESTURLNOTTOBEUSED"
+    let convertedUrl = url.replace("watch?v=", "embed/")
+    return convertedUrl
 }
