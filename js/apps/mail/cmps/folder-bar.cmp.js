@@ -1,7 +1,7 @@
 // import { myRouter } from "../../../routes.js";
 
 export default {
-    props: ['currFolder'],
+    props: ['currFolder', 'counter'],
     template: `
 <section class="mail-folder-bar">
    <button class="compose-btn" ><router-link class="compose-link" to="/mail/compose" exact>
@@ -9,7 +9,7 @@ export default {
    Compose
 </router-link></button>
    <div class="folders"></div>
-    <button :class="{currFolder: currFolder==='inbox'}" @click="emitInboxFilter">Inbox</button> 
+    <button :class="{currFolder: currFolder==='inbox'}" @click="emitInboxFilter">Inbox({{counter}})</button> 
     <button :class="{currFolder: currFolder==='sent'}" @click="emitSentFilter">Sent</button> 
     <button :class="{currFolder: currFolder==='star'}" @click="emitStarFilter">Starred</button> 
   </div>
