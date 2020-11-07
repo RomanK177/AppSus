@@ -95,7 +95,6 @@ export default {
             this.filterBy = filterBy
         },
         setFolder(folderIs) {
-            console.log("setFolder -> folderIs", folderIs)
 
             this.currFolder = folderIs
         }
