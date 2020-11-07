@@ -12,7 +12,7 @@
 }
 
 .compose-btn:hover {
-    box-shadow: 1px 1px 10px 1px;
+    /* box-shadow: 1px 1px 10px 1px; */
 }
 
 .compose-btn a {
@@ -33,11 +33,15 @@
     padding: 10px;
     border-radius: 3px;
     width: 140px;
+    background-color: white;
+    border: 1px solid lightskyblue;
     font-family: questrial, sans-serif;
 }
 
 .mail-folder-bar button:hover {
-    box-shadow: 1px 1px 10px 1px;
+    cursor: pointer;
+    background-color: rgb(194, 200, 206);
+    /* box-shadow: 1px 1px 10px 1px; */
 }
 
 .plus-img {
