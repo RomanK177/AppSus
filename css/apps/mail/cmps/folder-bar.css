@@ -46,3 +46,26 @@ width: 20px;
 /* button {
     padding: 25px;
 } */
+
+
+@media (max-width: 600px) {
+    section .mail-folder-bar{
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        width: 100%;
+        /* background-color: blue; */
+    }
+
+    .bar-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mail-list{
+        width: 100%
+    }
+
+
+}

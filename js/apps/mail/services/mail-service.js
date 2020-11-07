@@ -77,7 +77,7 @@ function _createMails() {
     mails.push(_createMail('I know what you did!', 'I saw the body and the blood marks. You have one day to bring me the money. Asshole...', 'Roman', true));
     mails.push(_createMail('Order is ready', 'Your pizza is ready! The delivery will arrive to you within 20 minutes or less!', 'PizzaHut'));
     mails.push(_createMail('Postmates', 'Danielle, are you looking for a job? You can make $29.99 an hour, working with postmates!', 'Postmates'));
-    mails.push(_createMail('Projects For You', 'You have 29 projects that match your profile. Log in to your profile to view possible casting opportunities', 'ActorsAccess'));
+    mails.push(_createMail('Projects For You', 'You have 29 projects that match your profile. Log in to your profile to view possible casting opportunities','Actors Access'));
     mails.push(_createMail('Amazon Delivery', 'Your package is due to arrive in 2 business days! Thank you for shopping with Amazon! ', 'Amazon'));
     mails.push(_createMail('Bank Statement', 'Your bank statement is available! You have to make a minimum payment of $239.00 by December 31st in order to keep your credit card in good standings!', 'Wells Fargo'));
     mails.push(_createMail('November Glam Bag ', 'Your November glam bag is on the way! To check the status of your package, look at the reference code that was texted to you! ', 'IPSY'));

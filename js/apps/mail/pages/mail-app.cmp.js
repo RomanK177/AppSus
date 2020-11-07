@@ -10,11 +10,11 @@ export default {
     <section class="mail-app flex-column">
         <app-header></app-header>
         <!-- <div> -->
-        <div class="filter-counter flex">
+        <div class="filter-counter">
             <mail-filter @doFilter="setFilter"></mail-filter>
             <div class="unread-count" v-if="mails">Unread mails: {{unReadCount}}</div>
         </div>
-        <div class="bar-list flex">
+        <div class="bar-list">
            <folder-bar :currFolder="currFolder" @doFolder="setFolder" class="flex-column"></folder-bar>
            <mail-list v-if="mails" :mails="folderedMails" @remove="removeMail" @readChange="changeRead" @starChange="changeStar" @clickedChange="changeClicked" ></mail-list>
         </div>
