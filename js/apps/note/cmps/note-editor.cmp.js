@@ -6,12 +6,24 @@ export default {
     props: ['note'],
     template: `
     <section class="note-editor">
-        <input v-if="note"  type="color" v-model="note.bgC" @input="saveNote(note)" />
-        <button class="delete-btn" @click="emitRemove(note.id)">x</button>
-        <button class="pin-btn" @click="togglePinned(), saveNote(note);">Pin</button>
-        <button @click="copyNote(note)">Copy</button>
+        <label for="create-color">
+             <!-- <i class="fa fa-palette"></i> -->
+            <input v-if="note" class="create-color"  id="create-color" type="color" v-model="note.bgC" @input="saveNote(note)"/>
+        </label>
+       <!-- <input v-if="note"  type="color" v-model="note.bgC" @input="saveNote(note)"/> -->
+        <button class="delete-btn" @click="emitRemove(note.id)">
+            <img class="trash" src="./assets/imgs/trash.svg">
+        </button>
+        <button class="pin-btn" @click="togglePinned(), saveNote(note);">
+            <img class="trash" src="./assets/imgs/pin.svg">
+        </button>
+        <button @click="copyNote(note), saveNote(note)">
+            <img class="trash" src="./assets/imgs/copy.svg">
+        </button>
         <note-modal :note="note" :info="note.info" v-show="isShowModal" @close="closeModal"/>
-        <button id="show-modal" @click="showModal">Open Note</button>
+        <button id="show-modal" @click="showModal">
+        <img class="trash" src="./assets/imgs/edit.svg">
+        </button>
 
     </section>
 

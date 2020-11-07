@@ -6,12 +6,9 @@ export default {
       <section v-if="note.type==='noteText'">
       <div class="modal-backdrop">
         <div class="modal">
-          <header class="modal-header">
-            <slot name="header">
-              <button type="button" class="btn-close" @click="close">x</button>
-            </slot>
-          </header>
           <section class="modal-body">
+          <input v-if="note.type === 'noteTxt'" v-model="note.info.txt">
+          <button type="button" class="btn-close" @click="close">x</button>
             <slot name="body">
             <input type="text" v-model="note.info.txt" @input="saveNote(note)">
             </slot>

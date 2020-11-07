@@ -4,6 +4,8 @@
 
 .note-preview{ 
      height: 10;
+     line-break: anywhere;
+     padding: 10px;
 }
 /* .note-preview{
     border: 1px solid rgb(162, 168, 173);
