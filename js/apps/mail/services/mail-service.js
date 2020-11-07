@@ -85,6 +85,10 @@ function _createMails() {
     mails.push(_createMail('Congrats!','You have successfully finished the course! You are now a fullstack developer! Your Certificate is attatched below. We cannot wait to see what you accomplish!', 'Coding'));
     mails.push(_createMail('Soul oferring ', 'Dear Satan, I am willing to sell my soul to you if you help me pass this course. Please get back to me ASAP. thanks.', 'Me', true, true, true));
     mails.push(_createMail('Keys', 'Hi Mr.Johnson, I need a new set of keys! My old roommate took the only copy I have, thank you! ', 'Me', false, true, true));
+    mails.push(_createMail('Projects For You', 'You have 29 projects that match your profile. Log in to your profile to view possible casting opportunities','Actors Access'));
+    mails.push(_createMail('Daily Horoscope', 'Lesson Learned. This is a tremendous time frame to share, express, or contribute what you have learned so far this month- as well as over a long period of global upheaval and change.', 'The Pattern'));
+    mails.push(_createMail('Appointment Today', 'Reminder that you have an appoinent today with Dr. Chipper. Please let us know how we are doing so far, and rate us on yelp!', 'Better Help'));
+    mails.push(_createMail('Doggy Treats', 'How is Bailey doing?! We recommend every little pup get the greeny treats! So they can have clean teeth as well as a yummy treat at the same time! Visit our website to purchase some! ', 'VCA TLC'));
     utilService.storeToStorage(STORAGE_KEY, mails)
     return mails;
 }
