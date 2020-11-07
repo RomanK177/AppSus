@@ -16,12 +16,13 @@
     flex-flow: rows nowrap;
     justify-content: space-between;
     border: lightgray 1px solid;
-    background-color: rgba(238, 239, 240, 0.719);
+    background-color: white
 }
 
 .mail-list ul li:hover {
     border: lightskyblue 1px solid;
-    box-shadow: 1px 1px 10px 1px;
+    background-color: rgba(238, 239, 240, 0.719);
+    /* box-shadow: 1px 1px 10px 1px; */
 }
 
 .prev-buttons {
