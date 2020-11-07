@@ -74,24 +74,27 @@ function getEmptyMail() {
 function _createMails() {
     if (localStorage.getItem(STORAGE_KEY)) return utilService.loadFromStorage(STORAGE_KEY)
     const mails = []
-    mails.push(_createMail('I know what you did!', 'I saw the body and the blood marks. You have one day to bring me the money. Asshole...', 'Roman'));
+    mails.push(_createMail('I know what you did!', 'I saw the body and the blood marks. You have one day to bring me the money. Asshole...', 'Roman', true));
     mails.push(_createMail('Order is ready', 'Come and get your shit.', 'PizaHus'));
     mails.push(_createMail('KAPARA', 'Bo be imsha, al tihie eled.', 'Danielle'));
     mails.push(_createMail('SPAM SPAM ', 'Lorem stuffff comercial bla bla', 'Johny'));
+    mails.push(_createMail('Congrats! ', 'You have successfully finished the cource! You are now a fullstack developer! You are going to get a shitload of money and bitches!', 'Coding'));
+    mails.push(_createMail('Soul oferring ', 'Dear Satan, I am willing to sell my soul to you if you help me to pass this course. Please get back to me ASAP. thanks.', 'Me', true, true, true));
+    mails.push(_createMail('Tired.. ', 'Hi watup? So tired from this cource mann .. We are going to get so wasted when I am done!!!', 'Me', false, true, true));
     utilService.storeToStorage(STORAGE_KEY, mails)
     return mails;
 }
 
-function _createMail(subject, body, from) {
+function _createMail(subject, body, from, isStar = false, isSent = false, isRead = false) {
     const mail = {
         id: utilService.makeId(),
         subject,
         body,
         from,
-        isStar: false,
-        isSent: false,
+        isStar,
+        isSent,
         isClicked: false,
-        isRead: Math.random() > 0.5,
+        isRead,
         sentAt: Date.now()
     }
     return mail;

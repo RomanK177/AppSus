@@ -16,9 +16,10 @@
 .unread-count {
     text-align: center;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
     margin-left: 3px;
     border: lightskyblue 1px solid;
+    margin-top: 11px;
 }
 
 .bar-list {
