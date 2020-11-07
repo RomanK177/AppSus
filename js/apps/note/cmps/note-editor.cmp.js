@@ -9,7 +9,7 @@ export default {
         <input v-if="note"  type="color" v-model="note.bgC" @input="saveNote(note)" />
         <button class="delete-btn" @click="emitRemove(note.id)">x</button>
         <button class="pin-btn" @click="togglePinned(), saveNote(note);">Pin</button>
-        <button @click="copyNote(note)">Copy</button>
+        <button @click="copyNote(note), saveNote(note)">Copy</button>
         <note-modal :note="note" :info="note.info" v-show="isShowModal" @close="closeModal"/>
         <button id="show-modal" @click="showModal">Open Note</button>
 
