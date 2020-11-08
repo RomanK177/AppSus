@@ -11,9 +11,9 @@
     font-size: large;
 }
 
-.compose-btn:hover {
+/* .compose-btn:hover {
     /* box-shadow: 1px 1px 10px 1px; */
-}
+ 
 
 .compose-btn a {
     text-decoration: none;
@@ -49,6 +49,14 @@
     width: 20px;
 }
 
+.plus-btn-compose{ 
+    background-color: lightskyblue;
+    padding: 2px 8px 5px 8px;
+    border-radius: 30px;
+    color: white;
+
+}
+
 
 /* button {
     padding: 25px;
@@ -76,4 +84,6 @@
         font-size: large;
         min-width: 129px;
     }
+
+   
 }

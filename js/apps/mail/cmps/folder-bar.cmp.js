@@ -5,8 +5,8 @@ export default {
     template: `
 <section class="mail-folder-bar">
    <button class="compose-btn" ><router-link class="compose-link" to="/mail/compose" exact>
-   <img class="plus-img" src="./assets/imgs/plus.svg">
-   Compose
+   <!-- <img class="plus-img" src="./assets/imgs/plus.svg"> -->
+   <span class="plus-btn-compose">+</span> Compose
 </router-link></button>
    <div class="folders"></div>
     <button :class="{currFolder: currFolder==='inbox'}" @click="emitInboxFilter">Inbox({{counter}})</button> 
