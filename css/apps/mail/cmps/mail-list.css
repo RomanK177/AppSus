@@ -19,7 +19,7 @@
     display: flex;
     flex-flow: rows nowrap;
     justify-content: space-between;
-    border: lightgray 1px solid;
+    border: lightskyblue 1px solid;
     background-color: white;
     padding: 5px;
 }
@@ -40,11 +40,29 @@
     flex-flow: row nowrap;
 }
 
+.prev-buttons button{
+    background-color: aliceblue;
+    cursor: pointer;
+
+}
+
+.prev-buttons button:hover{
+    background-color: lightgrey;
+
+}
+
 .unread {
     font-weight: bolder;
     font-style: italic;
 }
 
-.star {
-    background-color: rgba(135, 206, 250, 0.596);
+.star button{
+    background-color: white;
+}
+
+.star{
+/* border: 1px solid yellow;
+background-color: rgb(248, 248, 190); */
+border: 1px solid lightgray;
+background-color:lightpink;
 }
