@@ -2,6 +2,7 @@ import notePreview from './note-preview.cmp.js'
 // import noteModal from './note-modal.cmp.js'
 import { noteService } from '../services/note-service.js'
 import noteEditor from '../cmps/note-editor.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 // import { utilService } from '../../../services/util-service.js'
 
 

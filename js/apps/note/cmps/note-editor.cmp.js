@@ -1,5 +1,8 @@
 import { noteService } from '../services/note-service.js'
 import noteModal from '../cmps/note-modal.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
+
+
 
 export default {
     name: 'note-editor',
@@ -57,6 +60,11 @@ export default {
         closeModal() {
             this.isShowModal = false;
         },
+        // removeNote(noteId) {
+        //     noteService.removeNote(noteId)
+        //         .then(() => eventBus.$emit('show-msg', 'Note Deleted'))
+        //         .catch(err => console.log('something went wrong', err))
+        // },
 
 
     },
