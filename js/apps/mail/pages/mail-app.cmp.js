@@ -88,7 +88,7 @@ export default {
         },
         changeClicked(mailId) {
             mailService.changeClicked(mailId)
-                .then(() => eventBus.$emit('show-msg', 'Mail Clicked Updated'))
+                .then()
                 .catch(err => console.log('something went wrong', err))
         },
         setFilter(filterBy) {

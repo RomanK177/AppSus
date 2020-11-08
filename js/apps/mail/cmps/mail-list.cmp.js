@@ -10,7 +10,6 @@ export default {
          <ul >
               <div v-for="currMail in mails" :key="currMail.id" >
                 <li >
-                   <!-- <car-preview :car="currCar" @click.native="carClicked()" /> -->
                    <button class="reg-star" :class="{star: currMail.isStar}" @click="emitIsStarChange(currMail.id)">&#9733</button>
                    <mail-preview :mail="currMail" @click.native="mailClicked(),mailClicked(currMail.id)" />
                    <div class="prev-buttons">
@@ -23,11 +22,7 @@ export default {
           </ul>
     </section>
 `,
-    // data() {
-    //     return {
 
-    //     }
-    // },
     methods: {
         emitRemove(mailId) {
             this.$emit('remove', mailId)

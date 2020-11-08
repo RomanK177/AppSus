@@ -1,4 +1,4 @@
-import { eventBus } from "../services/event-bus-service.js";
+import { eventBus, EVENT_SHOW_MSG } from "../services/event-bus-service.js";
 
 export default {
     template: `
@@ -12,8 +12,11 @@ export default {
         };
     },
     created() {
-        eventBus.$on("show-msg", (msg) => {
+        eventBus.$on(EVENT_SHOW_MSG, msg => {
             this.msg = msg;
-        });
-    },
+            setTimeout(() => {
+                this.msg = null;
+            }, 2000)
+        })
+    }
 };
