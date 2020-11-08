@@ -5,7 +5,7 @@ export default {
     template: `
 <section class="mail-folder-bar">
    <button class="compose-btn" ><router-link class="compose-link" to="/mail/compose" exact>
-   <img class="plus-img"src="../assets/imgs/plus.svg">
+   <img class="plus-img"src="./assets/imgs/plus.svg">
    Compose
 </router-link></button>
    <div class="folders"></div>
