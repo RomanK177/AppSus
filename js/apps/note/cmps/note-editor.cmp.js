@@ -7,10 +7,8 @@ export default {
     template: `
     <section class="note-editor">
         <label for="create-color">
-             <!-- <i class="fa fa-palette"></i> -->
             <input v-if="note" class="create-color"  id="create-color" type="color" v-model="note.bgC" @input="saveNote(note)"/>
         </label>
-       <!-- <input v-if="note"  type="color" v-model="note.bgC" @input="saveNote(note)"/> -->
         <button class="delete-btn" @click="emitRemove(note.id)">
             <img class="trash" src="./assets/imgs/trash.svg">
         </button>

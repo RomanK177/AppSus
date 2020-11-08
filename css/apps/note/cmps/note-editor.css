@@ -23,7 +23,8 @@ width: 15px;
 
 .note-editor button{
     background-color: inherit;
-    border: 1px solid lightslategray;
+    border: none;
+    /* border: 1px solid lightslategray; */
     border-radius: 3px;
     cursor: pointer;
 }
@@ -35,3 +36,23 @@ width: 15px;
 .note-editor button:hover{
 background-color: lightskyblue
 }
+
+
+.painter {
+    display: none;
+}
+
+  .paint{
+    height: 15px;
+    width: 15px;
+    background-color: inherit;
+    /* border: 1px solid lightslategray; */
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .paint:hover{
+    background-color: lightskyblue;
+    padding: 10px;
+
+  }
